@@ -1,0 +1,116 @@
+.navbarHead {
+    background-color: #111;
+    padding: 20px 0 !important;
+
+    .row {
+        .navbarHeadLeft {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+
+            p {
+                color: #fff;
+                font-family: 'Roboto Mono', monospace;
+                user-select: none;
+                font-weight: 600;
+            }
+        }
+
+        .navbarHeadRight {
+            display: flex;
+            justify-content: flex-end;
+
+            ul {
+                display: flex;
+                align-items: center;
+                flex-wrap: wrap;
+
+                li {
+                    margin: 0 0 0 20px;
+
+                    a {
+                        font-weight: 600;
+                        color: #fff;
+                        font-family: 'Roboto Mono', monospace;
+                        text-transform: capitalize;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width:992px) {
+    .navbarHead {
+        .row {
+            .navbarHeadLeft {
+                padding-bottom: 10px;
+            }
+
+            .navbarHeadRight {
+                display: flex;
+                justify-content: flex-start;
+
+                ul {
+                    li {
+                        margin: 0 20px 0 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width:768px) {
+    .navbarHead {
+        .row {
+            .navbarHeadLeft {
+                padding-bottom: 10px;
+
+                p {
+                    line-height: 30px;
+                }
+            }
+
+            .navbarHeadRight {
+                display: flex;
+                justify-content: flex-start;
+
+                ul {
+                    li {
+                        margin-right: 20px;
+                        margin-left: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width:576px) {
+    .navbarHead {
+        .row {
+            .navbarHeadLeft {
+                padding-bottom: 10px;
+                display: flex;
+
+                p {
+                    line-height: 30px;
+                }
+            }
+
+            .navbarHeadRight {
+                display: flex;
+                justify-content: flex-start;
+
+                ul {
+                    flex-wrap: wrap;
+
+                    li {
+                        margin: 0 20px 10px 0;
+                    }
+                }
+            }
+        }
+    }
+}

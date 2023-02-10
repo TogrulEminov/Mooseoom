@@ -1,0 +1,32 @@
+.upComingSection {
+    padding: 40px 0;
+
+    .upComingSectionHead {
+        padding: 40px 0;
+
+        .row {
+            justify-content: center;
+
+            .title {
+                text-align: center;
+
+                h6 {
+                    font-size: 14px;
+                    font-family: 'Roboto Mono', monospace;
+                }
+
+                h1 {
+                    margin: 15px 0;
+                    font-size: 40px;
+                    font-weight: bold;
+                    font-family: 'Crimson Text', serif;
+                }
+
+                p {
+                    font-family: 'Roboto Mono', monospace;
+
+                }
+            }
+        }
+    }
+}

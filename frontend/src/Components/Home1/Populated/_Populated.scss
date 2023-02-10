@@ -1,0 +1,108 @@
+.populatedSection {
+    padding: 40px 0;
+
+    .row {
+        justify-content: space-between;
+
+        .populatedLeft {
+            img {
+                width: 100%;
+            }
+        }
+
+        .populatedRight {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+
+            h4 {
+                color: #000000;
+                font-size: 14px;
+                font-weight: 400;
+                font-family: 'Roboto Mono', monospace;
+                letter-spacing: 0.28px;
+
+            }
+
+            h2 {
+                font-family: 'Crimson Text', serif;
+                font-size: 40px;
+
+            }
+
+            p {
+                font-family: 'Roboto Mono', monospace;
+                font-size: 16px;
+                line-height: 30px;
+            }
+
+            .buyTicket {
+                margin: 20px 0;
+
+                a {
+                    text-transform: uppercase;
+                    padding: 10px 60px;
+                    border: 2px solid #000;
+                    font-size: 16px;
+                    font-family: 'Amiri', serif;
+                    color: #000;
+
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width:768px) {
+    .populatedSection {
+        .row {
+
+            .populatedRight {
+                margin: 10px 0;
+                text-align: center;
+                gap: 30px;
+
+                h2 {
+                    font-family: 'Crimson Text', serif;
+                    font-size: 40px;
+
+                }
+                p{
+                    display: none;
+                }
+
+
+            }
+        }
+    }
+}
+@media only screen and (max-width:576px) {
+    .populatedSection {
+        .row {
+            .populatedRight {
+                margin: 10px 0;
+                text-align: center;
+                gap: 30px;
+
+                h2 {
+                    font-size: 30px;
+
+                }
+                p{
+                    display: none;
+                }
+
+                .buyTicket {
+                    margin: 20px 0;
+    
+                    a {
+                        padding: 10px 40px;
+                        font-size: 14px;
+                    }
+                }
+
+
+            }
+        }
+    }
+}

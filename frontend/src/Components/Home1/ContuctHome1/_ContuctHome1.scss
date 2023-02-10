@@ -1,0 +1,180 @@
+.allContuctHome {
+    padding: 40px 0;
+
+    .row {
+        justify-content: space-between;
+        align-items: flex-start;
+
+        .contuctLeft {
+            h3 {
+                font-size: 14px;
+                padding-bottom: 10px;
+                font-family: 'Roboto Mono', monospace;
+            }
+
+            h1 {
+                font-size: 40px;
+                font-family: 'Crimson Text', serif;
+                padding-bottom: 10px;
+            }
+
+            .contuctLeftBody {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+                .contuctContent {
+                    margin-bottom: 14px;
+
+                    h3 {
+                        font-size: 25px;
+                        font-family: 'Crimson Text', serif;
+                        margin-bottom: 7px;
+                    }
+
+                    p {
+                        font-family: 'Roboto Mono', monospace;
+                        font-size: 14px;
+                        font-weight: 300;
+                        padding-bottom: 6px;
+
+                        a {
+                            color: #000;
+                            padding-top: 3px;
+                        }
+                    }
+
+                    a {
+                        padding-top: 6px;
+                        font-family: 'Roboto Mono', monospace;
+                        font-size: 14px;
+                        color: #000;
+                    }
+                }
+            }
+            .contuctSocial{
+                margin: 10px 0;
+                ul{
+                    display: flex;
+                    align-items: center;
+                    li{
+                        margin-right: 20px;
+                        a{
+                            font-size: 20px;
+                            color: #000;
+                            transition: .5s;
+                            &:hover{
+                                color: #666;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .contuctRight {
+            .contuctTextarea {
+                textarea {
+                    outline: none;
+                    padding: 18px;
+                    width: 100%;
+                    height: 236px;
+                    background: 0 0;
+                    font-size: 17px;
+                    border: 1px solid rgba(0, 0, 0, 1.0);
+                    resize: none;
+
+                    &::placeholder {
+                        color: #666;
+                    }
+                }
+
+                p {
+                    margin: 5px 0;
+                    color: red;
+                    font-size: 13px;
+                }
+            }
+
+            .contuctInput {
+                margin-top: 5px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+                .inputYup {
+                    p {
+                        color: red;
+                        font-size: 13px;
+                        margin: 5px 0;
+                    }
+
+                    input {
+                        padding: 12px 20px 12px 17px;
+                        width: 100%;
+                        font-size: 17px;
+                        color: #000;
+                        max-width: 100%;
+                        outline: none;
+                        border: 1px solid rgba(0, 0, 0, 0.7);
+
+                        &::placeholder {
+                            color: #666;
+                            font-weight: 200;
+                        }
+                    }
+                }
+            }
+
+            button {
+                margin-top: 14px;
+                width: 100%;
+                background: #000;
+                color: #ffffff;
+                border-color: #ffffff;
+                padding: 20px;
+                font-weight: bold;
+                font-size: 16px;
+                font-family: 'Crimson Text', serif;
+                text-transform: uppercase;
+                cursor: pointer;
+                transition: .6s;
+                &:hover{
+                    background-color: rgba(0, 0, 0, 0.7);
+                }
+            }
+        }
+    }
+}
+@media only screen and (max-width:768px) {
+    .allContuctHome {
+        .row {
+            .contuctLeft {
+                .contuctLeftBody {
+                    flex-direction: column;
+                    gap: 20px;
+                    align-items: flex-start;
+                }
+            }
+        }
+    }
+}
+@media only screen and (max-width:576px) {
+    .allContuctHome {
+        .row {
+            .contuctLeft {
+                h1{
+                    font-size: 25px;
+                }
+                .contuctLeftBody {
+                    flex-direction: column;
+                    gap: 20px;
+                    align-items: flex-start;
+                }
+            }
+            .contuctRight{
+                margin-top: 20px;
+            }
+        }
+    }
+}

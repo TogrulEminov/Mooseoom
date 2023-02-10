@@ -1,0 +1,148 @@
+.curatorSection {
+    padding: 40px 0;
+
+    .curatorHead {
+        padding: 20px 0;
+
+        .row {
+            justify-content: flex-start;
+
+            .title {
+                h5 {
+                    font-size: 14px;
+                    font-family: 'Roboto Mono', monospace;
+                    padding-bottom: 10px;
+                }
+
+                h1 {
+                    font-size: 40px;
+                    font-family: 'Crimson Text', serif;
+                    padding-bottom: 20px;
+                }
+
+                p {
+                    font-family: 'Roboto Mono', monospace;
+                    font-size: 14px;
+                    line-height: 20px;
+                }
+            }
+        }
+    }
+
+    .curatorsBody {
+        padding: 20px 0;
+        .row {
+            justify-content: space-between;
+
+            .curatorsCard {
+                text-align: center;
+                position: relative;
+                top: 0;
+                transition: .6s;
+                .curatorsImage {
+                    img {
+                        transition: .5s;
+                        width: 100%;
+
+                        &:hover {
+                            filter: grayscale(80%);
+                        }
+                    }
+                }
+                &:hover{
+                    top: -10px;
+                }
+
+                article {
+                    h4 {
+                        font-family: 'Roboto Mono', monospace;
+                        font-size: 14px;
+                        color: #666;
+                        padding: 10px 0;
+                    }
+
+                    h3 {
+                        font-family: 'Crimson Text', serif;
+                        font-size: 25px;
+                     }
+                }
+
+
+            }
+        }
+    }
+}
+
+@media only screen and (max-width:992px) {
+    .curatorSection {
+        .curatorHead {
+            .row {
+                justify-content:center;
+                text-align: center;
+            }
+        }
+    }
+
+
+}
+@media only screen and (max-width:768px) {
+    .curatorSection {
+        .curatorHead {
+            .row {
+                justify-content:center;
+                text-align: center;
+            }
+        }
+        .curatorsBody {
+            padding: 20px 0;
+            .row {
+                justify-content:center;
+                .curatorsCard {
+                    margin: 20px 0;
+                    .curatorsImage {
+                        img {
+                            width: 60%;
+    
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+
+}
+@media only screen and (max-width:576px) {
+    .curatorSection {
+        .curatorHead {
+            .row {
+                justify-content:center;
+                text-align: center;
+                .title {
+                  
+    
+                    h1 {
+                        font-size: 30px;
+                    }
+                }
+            }
+        }
+        .curatorsBody {
+            padding: 20px 0;
+            .row {
+                justify-content:center;
+                .curatorsCard {
+                    margin: 20px 0;
+                    .curatorsImage {
+                        img {
+                            width: 80%;
+    
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+
+}
