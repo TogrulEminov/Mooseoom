@@ -1,5 +1,5 @@
 .allFooter {
-    background-color: #111;
+    background-color: #fff;
     padding: 40px 0;
 
     .footerHead {
@@ -25,7 +25,7 @@
 
                     p {
                         font-family: 'Roboto Mono', monospace;
-                        color: #ffffff;
+                        color: #000;
                         font-size: 16px;
                         font-weight: 300;
                         line-height: 30px;
@@ -35,7 +35,7 @@
                     a {
                         font-family: 'Roboto Mono', monospace;
                         font-size: 16px;
-                        color: #ffffff;
+                        color: #000;
                         transition: .5s;
 
                         &:hover {
@@ -46,7 +46,6 @@
             }
 
             .footerCenter {
-                align-items: center;
                 display: flex;
                 flex-direction: column;
                 gap: 60px;
@@ -56,16 +55,15 @@
                         font-size: 25px;
                         font-family: 'Crimson Text', serif;
                         letter-spacing: 1px;
-                        color: #fff;
+                        color: #000;
                         margin-bottom: 20px;
                     }
 
                     ul {
-
                         li {
                             font-family: 'Amiri', serif;
                             text-align: left;
-                            color: #ffffff;
+                            color: #000;
                             font-size: 14px;
                             font-weight: 300;
                             line-height: 26px;
@@ -78,7 +76,7 @@
             .footerRight {
                 h3 {
                     text-align: left;
-                    color: #ffffff;
+                    color: #000;
                     line-height: 1em;
                     letter-spacing: 1px;
                     font-size: 40px;
@@ -99,11 +97,10 @@
                 a {
                     font-family: 'Roboto Mono', monospace;
                     font-size: 16px;
-                    color: #fff;
+                    color: #000;
                     font-weight: 600;
                     transition: .5s;
-
-                    &:hover {
+                    &:hover{
                         color: red;
                     }
                 }
@@ -111,54 +108,37 @@
         }
     }
 }
-
 @media only screen and (max-width:992px) {
     .allFooter {
         .footerHead {
             .row {
                 gap: 20px;
-
-                .footerCenter {
-                    align-items: flex-start;
-                }
             }
         }
     }
 }
-
 @media only screen and (max-width:768px) {
     .allFooter {
         .footerHead {
             .row {
                 gap: 20px;
-
-                .footerCenter {
-                    align-items: flex-start;
-                }
             }
         }
-
         .footerBody {
             ul {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 10px;
+               flex-direction: column;
+               align-items: flex-start;
+               gap: 10px;
 
             }
         }
     }
 }
-
 @media only screen and (max-width:576px) {
     .allFooter {
         .footerHead {
             .row {
                 gap: 20px;
-
-                .footerCenter {
-                    align-items: flex-start;
-                }
-
                 .footerRight {
                     h3 {
                         font-size: 30px;
@@ -166,12 +146,11 @@
                 }
             }
         }
-
         .footerBody {
             ul {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 10px;
+               flex-direction: column;
+               align-items: flex-start;
+               gap: 10px;
 
             }
         }

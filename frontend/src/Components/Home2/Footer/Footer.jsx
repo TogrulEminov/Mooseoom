@@ -1,7 +1,7 @@
 import React from 'react'
 import "./_Footer.scss"
 import { Link } from "react-router-dom"
-import menuLogo from "../../../media/menu-logo.png"
+import menuLogo from "../../../media/footer-img.png"
 const Footer = () => {
   return (
     <div className='allFooter'>
@@ -39,7 +39,7 @@ const Footer = () => {
                 </p>
               </div>
             </div>
-            <div className="col-3 col-lg-3 col-md-3  col-xs-12 col-s-12 footerCenter">
+            <div className="col 3 col-lg-3 col-md-3  col-xs-12 col-s-12 footerCenter">
               <div className="footerCenterHeading">
                 <h3>Museum</h3>
                 <ul>
@@ -69,7 +69,7 @@ const Footer = () => {
                 </ul>
               </div>
             </div>
-            <div className="col-3 col-lg-3 col-md-3  col-xs-12 col-s-12 footerCenter">
+            <div className="col 3 col-lg-3 col-md-3  col-xs-12 col-s-12 footerCenter">
               <div className="footerCenterHeading">
                 <h3>Bar Room</h3>
                 <ul>
@@ -99,7 +99,7 @@ const Footer = () => {
                 </ul>
               </div>
             </div>
-            <div className="col-3 col-lg-3  col-md-6 col-xs-12 col-s-12 footerRight">
+            <div className="col 3 col-lg-3  col-md-6 col-xs-12 col-s-12 footerRight">
               <h3>İnstagram</h3>
             </div>
           </div>

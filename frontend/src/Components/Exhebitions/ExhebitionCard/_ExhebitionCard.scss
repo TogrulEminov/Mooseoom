@@ -1,0 +1,125 @@
+.exhebitionCard {
+    padding-top: 40px ;
+
+    .card-1 {
+        background: url("../../../media/ex-post-1.jpg") center/cover;
+        min-height: 450px;
+        display: flex;
+        align-items: flex-end;
+        justify-content: flex-end;
+        background-repeat: no-repeat !important;
+        
+        .row {
+            justify-content: space-between;
+            .content {
+                position: relative;
+                bottom: 10px;
+                h4 {
+                    color: #ffffff;
+                    font-size: 16px;
+                    font-weight: 400;
+                    line-height: 1em;
+                    font-family: 'Roboto Mono', monospace;
+                    margin-bottom: 20px;
+                }
+
+                h2 {
+                    font-family: 'Roboto Mono', monospace;
+                    color: #ffffff;
+                    font-size: 60px;
+                    letter-spacing: 1px;
+                }
+                a{
+                    padding:14px 40px;
+                    border: 2px solid #ddd;
+                    font-size: 20px;
+                    color: #fff;
+  font-family: 'Amiri', serif;
+
+                }
+            }
+        }
+    }
+    .card-2{
+        background: url("../../../media/ex-post-2.jpg");
+    }
+    .card-3{
+        background: url("../../../media/ex-post-3.jpg");
+    }
+    .card-4{
+        background: url("../../../media/ex-post-4.jpg");
+    }
+    .card-5{
+        background: url("../../../media/ex-post-5.jpg");
+    }
+}
+@media only screen and (max-width:1200px) {
+    .exhebitionCard {
+        .card-1 {
+            .row {
+                .content {
+                    margin: 20px auto;
+                    a{
+                        padding:14px 40px;
+                    }
+                }
+            }
+        }
+     
+    }
+}
+@media only screen and (max-width:992px) {
+    .exhebitionCard {
+        padding-top: 40px ;
+        .card-1 {
+            min-height: 350px;
+            .row {
+                .content {
+                    text-align: center;
+                    bottom: 40px;
+                    a{
+                        padding:14px 60px;
+                    }
+                }
+            }
+        }    
+    }
+}
+@media only screen and (max-width:768px) {
+    .exhebitionCard {
+        padding-top: 40px ;
+        .card-1 {
+            min-height: 350px;
+            .row {
+                .content {
+                    text-align: center;
+                    bottom: 40px;
+                    h2{
+                        font-size: 40px;
+                    }
+                    a{
+                        padding:14px 40px;
+                    }
+                }
+            }
+        }    
+    }
+}
+@media only screen and (max-width:576px) {
+    .exhebitionCard {
+        .card-1 {
+            .row {
+                .content {
+                    text-align: center;
+                    bottom: 40px;
+                    h2{
+                        font-size: 30px;
+                    }
+                    a{
+                        padding:14px 40px;
+                    }
+                }
+            }
+        }    
+    }
+}

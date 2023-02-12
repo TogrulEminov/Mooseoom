@@ -1,0 +1,42 @@
+.exhebitionElementor {
+    padding: 50px 0;
+
+    .row {
+        justify-content: space-between;
+
+        .exhebitionLeft {
+            .row {
+                .exbhebitionCenter {
+                    margin: 10px 0;
+
+                    .exhebitionContent {
+                        margin: 10px 0;
+
+                        h3 {
+                            font-family: 'Crimson Text', serif;
+                            font-size: 30px;
+                        }
+
+                        ul {
+                            li {
+                                margin: 2px 0;
+                                font-family: 'Roboto Mono', monospace;
+                                font-size: 16px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .exhebitionRight{
+            img{
+            width: 100%;
+            border-radius: 5px;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width:992px) {
+
+}

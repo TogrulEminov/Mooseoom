@@ -5,7 +5,9 @@ import ContuctUs from "../Pages/ContactUS/ContuctUs";
 import Events from "../Pages/Events/Events";
 import Exhibitions from "../Pages/Exhibitions/Exhibitions";
 import Home1 from "../Pages/Home1/Home1";
+import Home2 from "../Pages/Home2/Home2";
 import MainRoot1 from "../Pages/MainRoot1";
+import MainRoot2 from "../Pages/MainRoot2";
 import Museum from "../Pages/Museum/Museum";
 import NotFound from "../Pages/NotFound/NotFound";
 import OurGalerry from "../Pages/OurGalery/OurGalerry";
@@ -17,7 +19,7 @@ export const ROUTES = [
         element: <MainRoot1 />,
         children: [
             {
-                path: "home1",
+                path: "",
                 element: <Home1 />
             },
             {
@@ -62,6 +64,16 @@ export const ROUTES = [
             },
 
 
+        ]
+    },
+    {
+        path: "/home2",
+        element: <MainRoot2 />,
+        children: [
+            {
+                path: "",
+                element: <Home2 />
+            }
         ]
     }
 ]
