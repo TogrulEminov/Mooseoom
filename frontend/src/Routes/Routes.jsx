@@ -1,3 +1,4 @@
+import Cart from "../Components/Home1/Cart/Cart";
 import Blog from "../Pages/Blog/Blog";
 import BuyTickets from "../Pages/BuyTickets/BuyTickets";
 import Collections from "../Pages/Collections/Collections";
@@ -57,6 +58,10 @@ export const ROUTES = [
             {
                 path: "contuctUs",
                 element: <ContuctUs />
+            },
+            {
+                path: "cart",
+                element: <Cart />
             },
             {
                 path: "*",

@@ -18,8 +18,8 @@ const Home1 = () => {
       <Curators />
       <TrendingSection />
       <NewsLetter />
-      <Information/>
-      <Populated/>
+      <Information />
+      <Populated />
       <ContuctHome1 />
     </div>
   )
