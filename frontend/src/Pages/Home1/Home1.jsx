@@ -1,4 +1,5 @@
 import React from 'react'
+import ArtDesign from '../../Components/Home1/ArtDesign/ArtDesign'
 import ContuctHome1 from '../../Components/Home1/ContuctHome1/ContuctHome1'
 import Curators from '../../Components/Home1/Curators/Curators'
 import ElementorSection from '../../Components/Home1/ElementorSection/ElementorSection'
@@ -20,6 +21,7 @@ const Home1 = () => {
       <NewsLetter />
       <Information />
       <Populated />
+      <ArtDesign />
       <ContuctHome1 />
     </div>
   )

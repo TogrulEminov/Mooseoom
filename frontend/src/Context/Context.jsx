@@ -5,8 +5,12 @@ export const mainContext = createContext(null)
 function Context({ children }) {
   const [open, setOpen] = useState(false)
   const [faq, setFaq] = useState(false)
+  // ! fetch data
+  const [data, setData] = useState(null)
+  const [artData, setArtData] = useState(null)
+  const url = "http://localhost:5555"
 
-   //!to add data localStorage
+  //!to add data localStorage
   const getLocalStorage = () => {
     let newCardData = localStorage.getItem("items");
     if (newCardData) {
@@ -19,13 +23,11 @@ function Context({ children }) {
 
   const [cardItems, setCardItems] = useState(getLocalStorage())
 
-  // ! fetch data
-  const [data, setData] = useState(null)
-  const url = "http://localhost:5555"
 
 
   useEffect(() => {
     getData()
+    getArtData()
   }, [])
 
 
@@ -34,12 +36,17 @@ function Context({ children }) {
     localStorage.setItem("items", JSON.stringify(cardItems))
   }, [cardItems])
 
- 
+
 
   //! get data
   const getData = async () => {
     const response = await axios.get(`${url}/posters`)
     setData(response.data);
+  };
+  //! get data
+  const getArtData = async () => {
+    const response = await axios.get(`${url}/art`)
+    setArtData(response.data);
   };
 
   // !handle add
@@ -98,7 +105,7 @@ function Context({ children }) {
     getData,
     cardItems,
     emptyBasket,
-    handleClick,
+    handleClick,artData
   }
   return (
     <mainContext.Provider value={Values}>

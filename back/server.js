@@ -15,14 +15,19 @@ mongoose.set("strictQuery", false);
 
 const filesUpload = require("express-fileupload")
 app.use(filesUpload({
-        useTempFiles:true
+    useTempFiles: true
 }))
 
 //Import Routes
+// !poster 
 const postRoute = require("./Routes/posters")
 app.use('/posters', postRoute)
+//!blog
 const blogRoute = require("./Routes/Blog");
 app.use('/blog', blogRoute)
+//! art 
+const artRoute = require("./Routes/Art");
+app.use('/art', artRoute)
 
 
 //Routes

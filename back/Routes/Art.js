@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router()
-const Poster = require("../models/Post")
+const Art = require("../models/Art")
 const multer = require('multer')
 const cloudinary = require("cloudinary").v2
 
@@ -43,7 +43,7 @@ const upload = multer({
 
 router.get("/", async (req, res) => {
     try {
-        const posts = await Poster.find();
+        const posts = await Art.find();
         res.json(posts)
     } catch (err) {
         res.json({ message: err })
@@ -51,23 +51,20 @@ router.get("/", async (req, res) => {
 })
 // !submits a post
 router.post("/", (req, res) => {
-    const file = req.files.photo
+    const file = req.files.image
     cloudinary.uploader.upload(file.tempFilePath, (err, result) => {
         console.log(result)
-        const Post = new Poster({
+        const newArt = new Art({
             name: req.body.name,
-            description: req.body.description,
-            rate: req.body.rate,
-            price: req.body.price,
+            information: req.body.information,
             percantagePrice: req.body.percantagePrice,
-            sale: req.body.sale,
-            catagory: req.body.catagory,
-            catagoryTwo: req.body.catagoryTwo,
-            imagePath: result.secure_url,
+            title: req.body.title,
+            workers: req.body.workers,
+            artPath: result.secure_url,
 
         })
         try {
-            const savedPost = Post.save()
+            const savedPost = newArt.save()
             res.json(savedPost)
         } catch (err) {
             res.json({ message: err })
@@ -80,7 +77,7 @@ router.post("/", (req, res) => {
 //!specific post
 router.get("/:id", async (req, res) => {
     try {
-        const postId = await Poster.findById(req.params.id)
+        const postId = await Art.findById(req.params.id)
         res.json(postId)
     } catch (err) {
         res.json({ message: err })
@@ -89,7 +86,7 @@ router.get("/:id", async (req, res) => {
 // !delete post
 router.delete('/:id', async (req, res) => {
     try {
-        const deleteId = await Poster.findByIdAndDelete(req.params.id)
+        const deleteId = await Art.findByIdAndDelete(req.params.id)
         res.json(deleteId)
     } catch (err) {
         res.json({ message: err })
@@ -100,7 +97,7 @@ router.delete('/:id', async (req, res) => {
 router.put("/:id", (req, res) => {
     const { id } = req.params;
 
-    Poster.findByIdAndUpdate(id, req.body, (err, doc) => {
+    Art.findByIdAndUpdate(id, req.body, (err, doc) => {
         if (!err) {
             res.send({ message: "SUCCESSFULLY Updated" });
         }
