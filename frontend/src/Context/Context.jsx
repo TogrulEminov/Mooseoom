@@ -5,46 +5,83 @@ export const mainContext = createContext(null)
 function Context({ children }) {
   const [open, setOpen] = useState(false)
   const [faq, setFaq] = useState(false)
-  const [cardItems, setCardItems] = useState([])
+
+   //!to add data localStorage
+  const getLocalStorage = () => {
+    let newCardData = localStorage.getItem("items");
+    if (newCardData) {
+      return JSON.parse(localStorage.getItem("items"))
+    }
+    else {
+      return []
+    }
+  }
+
+  const [cardItems, setCardItems] = useState(getLocalStorage())
+
   // ! fetch data
   const [data, setData] = useState(null)
   const url = "http://localhost:5555"
+
 
   useEffect(() => {
     getData()
   }, [])
 
+
+
+  useEffect(() => {
+    localStorage.setItem("items", JSON.stringify(cardItems))
+  }, [cardItems])
+
+ 
+
+  //! get data
   const getData = async () => {
     const response = await axios.get(`${url}/posters`)
     setData(response.data);
   };
 
-  // handlerAdd product
-  const handleAddProduct = (product) => {
-    const ProductExist = cardItems.find((item) => item.id === product.id)
-    if (ProductExist) {
-      setCardItems(cardItems.map((item) => item.id === product.id ? { ...ProductExist, quantity: ProductExist.quantity + 1 } : item))
-
-    }
-    else {
-      setCardItems([...cardItems, { ...product, quantity: 1 }])
-    }
+  // !handle add
+  const handleClick = (item) => {
+    if (cardItems.indexOf(item) !== -1) return
+    setCardItems([...cardItems, item])
   }
 
-  // handler remove product
-  const handleRemoveProduct = (product) => {
-    const ProductExist = cardItems.find((item) => item.id === product.id)
-    if (ProductExist.quantity === 1) {
-      setCardItems(cardItems.filter((item) => item.id !== product._id ? { ...ProductExist, quantity: ProductExist.quantity + 1 } : item))
 
-    }
-    else {
-      setCardItems(cardItems.map((item) => item.id === product.id ? { ...ProductExist, quantity: ProductExist.quantity - 1 } : item))
+  //! empty basket
+  const emptyBasket = (id) => {
+    cardItems.splice(id, 1)
+    getData()
 
-    }
+    // remove the localStorage
+    let items = JSON.parse(localStorage.getItem('items'));
+    items.forEach((item, index) => {
+      if (id === item.id) {
+        items.splice(index, 1)
+      }
+    });
+    localStorage.setItem('items', JSON.stringify(cardItems))
   }
-  // total price
-  const totalPrice = cardItems.reduce((price, item) => price + item.quantity * item.price,0)
+
+  //! uptade item local Storage
+  // const uptadeItemsLocal = (uptadeItem) => {
+  //   let items = JSON.parse(localStorage.getItem("items"))
+  //   items.forEach((item, index) => {
+  //     if (uptadeItem.id === item.id) {
+  //       item.splice(index, 1, uptadeItem)
+  //     }
+  //   });
+  //   localStorage.setItem('items', JSON.stringify(cardItems))
+  // }
+
+
+
+  // !total price
+  const getCardTotal = () => {
+    return cardItems.reduce((sum, { quantity }) => sum + quantity, 0)
+  }
+
 
   const clickBtn = () => {
     setFaq(!faq)
@@ -53,8 +90,15 @@ function Context({ children }) {
     setOpen(!open)
   }
   const Values = {
-    clickHamburger, open, faq, clickBtn, data,
-    getData, handleAddProduct, cardItems,handleRemoveProduct
+    clickHamburger,
+    open,
+    faq,
+    clickBtn,
+    data,
+    getData,
+    cardItems,
+    emptyBasket,
+    handleClick,
   }
   return (
     <mainContext.Provider value={Values}>

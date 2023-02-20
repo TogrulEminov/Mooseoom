@@ -1,79 +1,102 @@
 import React, { useContext } from 'react'
 import "../_Card.scss"
-import { AiFillDelete, AiOutlinePlus, AiOutlineMinus } from "react-icons/ai"
-import { useNavigate } from "react-router-dom";
+import { AiOutlineDelete, AiOutlinePlus, AiOutlineMinus } from "react-icons/ai"
 import { Link } from "react-router-dom"
+import { MdContentPaste } from "react-icons/md"
+import { useNavigate } from "react-router-dom";
 import { mainContext } from '../../../../Context/Context'
 const CardBody = () => {
+    const { cardItems, emptyBasket } = useContext(mainContext)
     const navigate = useNavigate();
-    const { data, cardItems, handleAddProduct, handleRemoveProduct } = useContext(mainContext)
-
 
     return (
-        <div className='cardBody'>
-            <div className="container">
-                <div className="row">
-                    {cardItems.length === 0 && <h3>No items added</h3>}
-                    {cardItems.map((product) => (
-                        <table  key={product._id} className='col-12 table'>
-                            <thead >
-                                <tr>
-                                <th></th>
-                                <th></th>
-                                <th>Product</th>
-                                <th>Price</th>
-                                <th>Quantity</th>
-                                <th>Subtotal</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                            
-                                    <tr>
-                                        <td>
-                                            <button><AiFillDelete /></button>
-                                        </td>
-                                        <td>
-                                            <Link>
-                                                <img src={product.imagePath} alt="" />
-                                            </Link>
-                                        </td>
-                                        <td>
-                                            <h4>
-                                                <Link>
-                                                    {product.name}
-                                                </Link>
-                                            </h4>
-                                        </td>
-                                        <td>
 
-                                            {product.sale ?
-                                                <div>
-                                                    <span>£{product.price - parseInt((product.price * product.percantagePrice) / 100)}.00</span>
-                                                </div> : <div>
-                                                    <span>£{product.price}</span>
-                                                </div>
-                                            }
-                                        </td>
-                                        <td>
-                                            <button onClick={() => handleAddProduct(product)}><AiOutlinePlus /></button>
-                                            <button onClick={() => handleRemoveProduct(product)}><AiOutlineMinus /></button>
-                                        </td>
-                                        <td>
-                                        {product.sale ?
-                                                <div>
-                                                    <span>£{product.quantity}*{product.price - parseInt((product.price * product.percantagePrice) / 100)}.00</span>
-                                                </div> : <div>
-                                                    <span>£{parseInt(product.quantity*product.price)}.00</span>
-                                                </div>
-                                            }
-                                        </td>
-                                    </tr>
-                              
-                            </tbody>
-                        </table>
-                   ))}
+        <div className='allCardBasket'>
+            {cardItems.length > 0 && (
+                <div className="Table">
+                    <div className="container">
+                        <div className="tableHead">
+                            <div className="row">
+                                <div className='col-2 content'>
+                                    Delete
+                                </div>
+                                <div className='col-2 content'>
+                                    Image
+                                </div>
+                                <div className='col-2 content'>
+                                    Products
+                                </div>
+                                <div className='col-2 content'>
+                                    Price
+                                </div>
+                                <div className='col-2 content'>
+                                    Quantity
+                                </div>
+                                <div className='col-2 content'>
+                                    Subtotal
+                                </div>
+
+                            </div>
+                        </div>
+                        {cardItems.map((product) => (
+                            <div className="tableBody" key={product._id}>
+                                <div className="row">
+                                    <div className="col-2 content">
+                                        <button onClick={() => emptyBasket()}><AiOutlineDelete /></button>
+                                    </div>
+                                    <div className="col-2 content">
+                                        <Link>
+                                            <img src={product?.imagePath} alt={product.name} /></Link>
+                                    </div>
+                                    <div className="col-2 content">
+                                        <Link>  <span>
+                                            {product.name}
+                                        </span></Link>
+                                    </div>
+                                    {product.sale ?
+                                        <div className="col-2 content">
+                                            <span>£{product.price - parseInt((product.price * product.percantagePrice) / 100)}.00</span>
+                                        </div> : <div className="col-2 content">
+                                            <span>£{product.price}</span>
+                                        </div>
+                                    }
+                                    <div className="col-2 content">
+                                        <div className="quantity">
+                                            <button className='plus'>
+                                                <AiOutlinePlus />
+                                            </button>
+                                            <span></span>
+                                            <button className='minus'>
+                                                <AiOutlineMinus />
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div className="col-2 content">
+                                        <h5>Total</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        ))}
+                        <div className="uptadeTotal">
+                            <button >Uptade</button>
+                        </div>
+                    </div>
                 </div>
-            </div>
+            )}
+            {cardItems.length === 0 && (
+                <div className='emptyCardBasket'>
+                    <div className="container">
+                        <div className="emptyBasketContent">
+                            <div className='horizontal'></div>
+                            <p>
+                                <MdContentPaste />
+                                <span>Your cart is currently empty.</span>
+                            </p>
+                            <Link to="/shop">Return to shop</Link>
+                        </div>
+                    </div>
+                </div>
+            )}
         </div>
     )
 }

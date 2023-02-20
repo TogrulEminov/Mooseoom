@@ -6,7 +6,7 @@ const CardHead = () => {
             <div className="cardHeadBackround">
                 <div className="row">
                     <div className="col-12 content">
-                        <h1>Shop</h1>
+                        <h1>Cart</h1>
                     </div>
                 </div>
             </div>

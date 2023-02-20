@@ -13,6 +13,7 @@ import Museum from "../Pages/Museum/Museum";
 import NotFound from "../Pages/NotFound/NotFound";
 import OurGalerry from "../Pages/OurGalery/OurGalerry";
 import Shop from "../Pages/Shop/Shop";
+import ShopDetail from "../Pages/ShopDetail/ShopDetail";
 
 export const ROUTES = [
     {
@@ -42,6 +43,10 @@ export const ROUTES = [
             {
                 path: "shop",
                 element: <Shop />
+            },
+            {
+                path: "shop/:id",
+                element: <ShopDetail />
             },
             {
                 path: "blog",

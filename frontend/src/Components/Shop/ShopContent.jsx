@@ -1,18 +1,22 @@
 import React, { useContext } from 'react'
 import { AiFillStar } from "react-icons/ai"
 import { mainContext } from '../../Context/Context'
+import { Link } from "react-router-dom"
 const ShopContent = () => {
-    const { data,handleAddProduct} = useContext(mainContext)
-   
+    const { data,handleClick } = useContext(mainContext)
+
     return (
         <div className="shopCardContent">
             <div className="container">
                 <div className="row">
                     {
                         data && data.map((e,index) => (
-                            <div  key={index} className="col-3 shopCard">
+                            <div className="col-3 shopCard" key={index}>
                                 <div className="shopCardImage">
-                                    <img src={e.imagePath} alt="" />
+                                    <Link to={`${e._id}`}>
+                                        <img src={e.imagePath} alt="" />
+                                    </Link>
+
                                     <div className='sale'>
                                         {e.sale ? <span>sale</span> : <></>}
                                     </div>
@@ -37,9 +41,10 @@ const ShopContent = () => {
                                             <span>£{e.price}</span>
                                         </div>
                                     }
-                                    <button onClick={()=>handleAddProduct(e)}>Add to card</button>
+                                    <button onClick={() => handleClick(e)}>Add to card</button>
                                 </article>
                             </div>
+
                         ))
                     }
 
