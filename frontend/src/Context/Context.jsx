@@ -8,6 +8,7 @@ function Context({ children }) {
   // ! fetch data
   const [data, setData] = useState(null)
   const [artData, setArtData] = useState(null)
+  const [blog, setBlog] = useState(null)
   const url = "http://localhost:5555"
 
   //!to add data localStorage
@@ -28,6 +29,7 @@ function Context({ children }) {
   useEffect(() => {
     getData()
     getArtData()
+    getBlogData()
   }, [])
 
 
@@ -48,7 +50,11 @@ function Context({ children }) {
     const response = await axios.get(`${url}/art`)
     setArtData(response.data);
   };
-
+  //! get data
+  const getBlogData = async () => {
+    const response = await axios.get(`${url}/blog`)
+    setBlog(response.data);
+  };
   // !handle add
   const handleClick = (item) => {
     if (cardItems.indexOf(item) !== -1) return
@@ -105,7 +111,7 @@ function Context({ children }) {
     getData,
     cardItems,
     emptyBasket,
-    handleClick,artData
+    handleClick, artData,blog
   }
   return (
     <mainContext.Provider value={Values}>

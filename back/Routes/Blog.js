@@ -1,41 +1,51 @@
 const express = require("express");
-const Post = require("../models/Post");
 const router = express.Router()
 const Blog = require("../models/Blog")
-
+const upload = require("../Multer/Multer")
+const cloudinary = require("../Cloudinary/Cloudinary")
 
 //! get back all the posts
 router.get("/", async (req, res) => {
     try {
-        const blog = await Blog.find();
-        res.json(blog)
+        const posts = await Blog.find();
+        res.json(posts)
     } catch (err) {
         res.json({ message: err })
     }
 })
-// !submits a post
-router.post("/", async (req, res) => {
 
-    const newBlog = new Blog({
-        title: req.body.title,
-        desc: req.body.desc,
-        date: req.body.date,
-        publisher: req.body.publisher,
+// !submits a post
+router.post("/", (req, res) => {
+    const file = req.files.photo
+    cloudinary.uploader.upload(file.tempFilePath, (err, result) => {
+        console.log(result)
+        const blog = new Blog({
+            title: req.body.title,
+            information: req.body.information,
+            date: req.body.date,
+            publisher: req.body.publisher,
+            publisherUrl: req.body.publisherUrl,
+            Recentpost: req.body.Recentpost,
+            archives: req.body.archives,
+            catagories: req.body.catagories,
+            blogImage: result.secure_url,
+           
+        })
+        try {
+            const savedPost = blog.save()
+            res.json(savedPost)
+        } catch (err) {
+            res.json({ message: err })
+        }
     });
-    try {
-        const savedBlog = await newBlog.save()
-        res.json(savedBlog)
-    } catch (err) {
-        res.json({ message: err })
-    }
 })
 
 
 //!specific post
 router.get("/:id", async (req, res) => {
     try {
-        const BlogId = await Blog.findById(req.params.id)
-        res.json(BlogId)
+        const postId = await Blog.findById(req.params.id)
+        res.json(postId)
     } catch (err) {
         res.json({ message: err })
     }
@@ -51,13 +61,13 @@ router.delete('/:id', async (req, res) => {
 })
 
 // !uptade a post
-router.put("/:id", async (req, res) => {
-    try {
-        const uptadeId = await Blog.findByIdAndUpdate(req.params.id)
-        res.json(uptadeId)
-    } catch (err) {
-        res.json({ message: err })
-    }
+router.put("/:id", (req, res) => {
+    const { id } = req.params;
+    Blog.findByIdAndUpdate(id, req.body, (err, doc) => {
+        if (!err) {
+            res.send({ message: "SUCCESSFULLY Updated" });
+        }
+    });
 })
 
 module.exports = router

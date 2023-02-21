@@ -1,6 +1,5 @@
 .navbarBottom {
-    padding: 20px 0;
-
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     .row {
         justify-content: space-between;
 
@@ -23,7 +22,7 @@
                 align-items: center;
 
                 li {
-                    padding: 10px 0;
+                    padding: 21px 5px;
                     margin: 0 12px;
 
                     &:hover .submenu {
@@ -46,14 +45,13 @@
                         border-radius: 5px;
                         position: absolute;
                         z-index: 100;
-                        top: 35px;
+                        top: 65px;
                         width: 100px;
-                        left: -21px;
+                        left: -18px;
                         display: none;
                         align-items: center;
                         justify-content: center;
-                        box-shadow: rgb(0 0 0 / 35%) 0px 5px 15px;
-                        background-color:#fff ;
+                        background-color: #fff;
                         border: 1px solid #ffffff54;
 
                         ul {
@@ -61,7 +59,7 @@
                             width: 100%;
                             text-align: center;
 
-                            li {
+                            li { 
                                 padding: 4px 0;
                                 margin: 0;
                                 border-bottom: 1px solid #dddddd46;
@@ -75,27 +73,23 @@
 
                     .submenu-2 {
                         position: absolute;
-                        top: 40px;
-                        left: -66px;
+                        top: 67px;
+                        left: -75px;
                         z-index: 100;
                         background-color: #fff;
                         border: 1px solid #dddddd46;
-                        box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
                         display: none;
-                        transition: .5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-
                         .row {
-                            width: 500px;
+                            width: 600px;
                             padding: 10px 0;
 
                             .submenuLeft {
                                 border-right: 2px solid gray;
-
                                 h3 {
                                     font-size: 20px;
                                     font-weight: bold;
                                     font-family: 'Crimson Text', serif;
-                                    padding: 10px 0;
+                                    padding:4px 0;
                                 }
 
                                 ul {
@@ -104,6 +98,7 @@
                                     li {
                                         position: relative;
                                         margin: 0 -15px;
+                                        padding: 5px 0 !important;
 
                                         &:hover .submenu-3 {
                                             display: flex;
@@ -114,22 +109,20 @@
                                         }
 
                                         .submenu-3 {
-                                            z-index: 100;
                                             position: absolute;
-                                            left: 101%;
+                                            left: 100%;
                                             top: 10px;
                                             min-width: 230px;
                                             background-color: #fff;
                                             display: none;
                                             align-items: center;
-                                            border: 1px solid #ddd;
+                                            border: 1px solid #dddddd7c;
                                             justify-content: center;
-                                            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 
                                             ul {
                                                 li {
                                                     margin: 0 -10px;
-                                                    padding: 4px;
+                                                    padding: 4px 0 !important;
                                                 }
                                             }
                                         }
@@ -155,30 +148,30 @@
                                             transition: .6s;
                                             opacity: 1;
                                             position: relative;
-                                            left: 50%;
+                                            left: 59%;
                                         }
 
                                         .minus {
                                             transition: .6s;
                                             opacity: 0;
-                                            left: 44%;
+                                            left: 54%;
                                             position: relative;
                                         }
 
                                         .plus-2 {
-                                            left: 55%;
+                                            left: 63%;
                                         }
 
                                         .minus-2 {
-                                            left: 50%;
+                                            left: 59%;
                                         }
 
                                         .minus-3 {
-                                            left: 60%;
+                                            left: 66%;
                                         }
 
                                         .plus-3 {
-                                            left: 65%;
+                                            left: 71%;
                                         }
                                     }
                                 }

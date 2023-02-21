@@ -15,7 +15,6 @@ const Information = () => {
                 <Swiper
                     slidesPerView={"auto"}
                     spaceBetween={30}
-                  
                     grabCursor={true}
                     loop={true}
                     className="mySwiper"
