@@ -6,12 +6,8 @@ import { Swiper, SwiperSlide } from "swiper/react";
 
 // Import Swiper styles
 import "swiper/css";
-import "swiper/css/pagination";
-import "swiper/css/navigation";
+import { Pagination } from "swiper";
 
-
-// import required modules
-import { Navigation } from "swiper";
 import { mainContext } from '../../../Context/Context';
 const UpComingSection = () => {
   const { blog } = useContext(mainContext)
@@ -29,15 +25,14 @@ const UpComingSection = () => {
         </div>
         <div className="upComingBody">
           <Swiper
-            spaceBetween={20}
-            slidesPerView={4}
-            navigation={true}
-            modules={[Navigation]}
-            className="mySwiper"
+           slidesPerView={4}
+           spaceBetween={30}
+          
+           modules={[Pagination]}
+           className="mySwiper"
           >
             {blog && blog.map((e) => (
               <SwiperSlide key={e._id}>
-                <div className='col-3'>
                   <div className="card">
                     <Link className="cardImage">
                       <img src={e?.blogImage} alt="" />
@@ -48,7 +43,6 @@ const UpComingSection = () => {
                       <p>{e.information}</p>
                     </article>
                   </div>
-                </div>
               </SwiperSlide>
             ))}
           </Swiper>
