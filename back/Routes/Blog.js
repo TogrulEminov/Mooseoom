@@ -1,7 +1,6 @@
 const express = require("express");
 const router = express.Router()
 const Blog = require("../models/Blog")
-const upload = require("../Multer/Multer")
 const cloudinary = require("../Cloudinary/Cloudinary")
 
 //! get back all the posts

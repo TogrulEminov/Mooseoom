@@ -1,46 +1,9 @@
 const express = require("express");
 const router = express.Router()
 const Art = require("../models/Art")
-const multer = require('multer')
-const cloudinary = require("cloudinary").v2
-
-cloudinary.config({
-    cloud_name: "dboyaaec5",
-    api_key: "391521928856559",
-    api_secret: "qzZESyRwwIF-5ELmWZPbRi8rvh4"
-});
-
-const storage = multer.diskStorage({
-    destination: function (req, file, cb) {
-        cb(null, 'uploads/');
-    },
-    filename: function (req, file, cb) {
-        cb(null, new Date() + file.originalname);
-    }
-})
-
-const fileFilter = (req, file, cb) => {
-    // reject a file
-    if (file.mimetype === "image/jpeg" || file.mimetype === "image/png" || file.mimetype === "image/jpg") {
-        cb(null, true);
-    }
-    else {
-        cb(null, false);
-    }
-}
-
-const upload = multer({
-    storage: storage,
-    limits: {
-        fileSize: 1024 * 1024 * 5
-    },
-    fileFilter: fileFilter
-})
-
-
+const cloudinary=require("../Cloudinary/Cloudinary")
 
 //! get back all the posts
-
 router.get("/", async (req, res) => {
     try {
         const posts = await Art.find();

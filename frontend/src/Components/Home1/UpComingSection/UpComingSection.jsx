@@ -25,14 +25,16 @@ const UpComingSection = () => {
         </div>
         <div className="upComingBody">
           <Swiper
-           slidesPerView={4}
-           spaceBetween={30}
-          
-           modules={[Pagination]}
-           className="mySwiper"
+            slidesPerView={4}
+            spaceBetween={30}
+
+            modules={[Pagination]}
+            className="mySwiper"
           >
-            {blog && blog.map((e) => (
-              <SwiperSlide key={e._id}>
+            {blog && blog
+              .filter(item => item.catagories === "Home1")
+              .map((e) => (
+                <SwiperSlide key={e._id}>
                   <div className="card">
                     <Link className="cardImage">
                       <img src={e?.blogImage} alt="" />
@@ -43,8 +45,8 @@ const UpComingSection = () => {
                       <p>{e.information}</p>
                     </article>
                   </div>
-              </SwiperSlide>
-            ))}
+                </SwiperSlide>
+              ))}
           </Swiper>
         </div>
       </div>

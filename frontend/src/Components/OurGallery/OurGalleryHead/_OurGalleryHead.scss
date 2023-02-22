@@ -1,0 +1,58 @@
+.ourGalleryHead {
+    padding-bottom: 10px 0;
+    background: url("../../../media/gallery-banner.jpg") center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 700px;
+
+    .row {
+        justify-content: center;
+
+        .content {
+            text-align: center;
+
+            h1 {
+                color: #fff;
+                font-family: 'Crimson Text', serif;
+                font-size: 50px;
+            }
+        }
+    }
+}
+@media only screen and (max-width:992px) {
+    .ourGalleryHead {
+        min-height: 600px;
+        .row {
+            .content {
+                h1 {
+                    font-size: 50px;
+                }
+            }
+        }
+    }
+}
+@media only screen and (max-width:768px) {
+    .ourGalleryHead {
+        min-height: 400px;
+        .row {
+            .content {
+                h1 {
+                    font-size: 50px;
+                }
+            }
+        }
+    }
+}
+@media only screen and (max-width:576px) {
+    .ourGalleryHead {
+        min-height: 300px;
+        .row {
+            .content {
+                h1 {
+                    font-size: 30px;
+                }
+            }
+        }
+    }
+}
