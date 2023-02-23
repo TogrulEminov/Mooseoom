@@ -3,8 +3,11 @@ var cors = require("cors");
 var bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 var morgan = require('morgan')
-
+const postRoute = require("./Routes/posters")
+const blogRoute = require("./Routes/Blog");
+const artRoute = require("./Routes/Art");
 const dotenv = require("dotenv");
+
 const app = express();
 app.use(cors());
 app.use(morgan("dev"))
@@ -13,20 +16,17 @@ app.use(bodyParser.urlencoded({ extended: false }))
 dotenv.config();
 mongoose.set("strictQuery", false);
 
-const filesUpload = require("express-fileupload")
-app.use(filesUpload({
+const fileUpload = require("express-fileupload")
+app.use(fileUpload({
     useTempFiles: true
 }))
 
 //Import Routes
 // !poster 
-const postRoute = require("./Routes/posters")
 app.use('/posters', postRoute)
 //!blog
-const blogRoute = require("./Routes/Blog");
 app.use('/blog', blogRoute)
 //! art 
-const artRoute = require("./Routes/Art");
 app.use('/art', artRoute)
 
 

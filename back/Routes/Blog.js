@@ -1,8 +1,13 @@
 const express = require("express");
 const router = express.Router()
 const Blog = require("../models/Blog")
-const cloudinary = require("../Cloudinary/Cloudinary")
-
+const cloudinary = require("cloudinary").v2
+cloudinary.config({
+    cloud_name: 'dboyaaec5',
+    api_key: '391521928856559',
+    api_secret: 'qzZESyRwwIF-5ELmWZPbRi8rvh4',
+    secure: true
+});
 //! get back all the posts
 router.get("/", async (req, res) => {
     try {
@@ -18,7 +23,7 @@ router.post("/", (req, res) => {
     const file = req.files.photo
     cloudinary.uploader.upload(file.tempFilePath, (err, result) => {
         console.log(result)
-        const blog = new Blog({
+        let blog = new Blog({
             title: req.body.title,
             information: req.body.information,
             date: req.body.date,

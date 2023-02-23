@@ -1,7 +1,15 @@
 const express = require("express");
 const router = express.Router()
 const Art = require("../models/Art")
-const cloudinary=require("../Cloudinary/Cloudinary")
+// const cloudinary=require("../Cloudinary/Cloudinary")
+const cloudinary = require("cloudinary").v2
+
+cloudinary.config({
+    cloud_name: 'dboyaaec5',
+    api_key: '391521928856559',
+    api_secret: 'qzZESyRwwIF-5ELmWZPbRi8rvh4',
+    secure: true
+});
 
 //! get back all the posts
 router.get("/", async (req, res) => {
@@ -14,10 +22,12 @@ router.get("/", async (req, res) => {
 })
 // !submits a post
 router.post("/", (req, res) => {
-    const file = req.files.image
+    console.log(req.body);
+    const file = req.files.images
     cloudinary.uploader.upload(file.tempFilePath, (err, result) => {
+        console.log(result);
         console.log(result)
-        const newArt = new Art({
+        let newArt = new Art({
             name: req.body.name,
             information: req.body.information,
             percantagePrice: req.body.percantagePrice,
@@ -34,8 +44,7 @@ router.post("/", (req, res) => {
         }
     });
 
-})
-
+});
 
 //!specific post
 router.get("/:id", async (req, res) => {
