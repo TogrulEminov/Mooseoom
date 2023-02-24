@@ -9,7 +9,17 @@ function Context({ children }) {
   const [data, setData] = useState(null)
   const [artData, setArtData] = useState(null)
   const [blog, setBlog] = useState(null)
+  const [blogItems, setBlogItems] = useState(blog)
   const url = "http://localhost:5555"
+
+  // !filter blog Item
+  const filterArtItems = (catItem) => {
+    const uptadeItems = blog.filter((curElem) => {
+      return curElem.catagories === catItem
+    });
+    setBlogItems(uptadeItems)
+
+  }
 
   //!to add data localStorage
   const getLocalStorage = () => {
@@ -23,6 +33,7 @@ function Context({ children }) {
   }
 
   const [cardItems, setCardItems] = useState(getLocalStorage())
+
 
 
 
@@ -60,14 +71,14 @@ function Context({ children }) {
     if (cardItems.indexOf(item) !== -1) return
     setCardItems([...cardItems, item])
   }
-
+  //! load more page
 
   //! empty basket
   const emptyBasket = (id) => {
     cardItems.splice(id, 1)
     getData()
 
-    // remove the localStorage
+    // !remove the localStorage
     let items = JSON.parse(localStorage.getItem('items'));
     items.forEach((item, index) => {
       if (id === item.id) {
@@ -77,31 +88,28 @@ function Context({ children }) {
     localStorage.setItem('items', JSON.stringify(cardItems))
   }
 
-  //! uptade item local Storage
-  // const uptadeItemsLocal = (uptadeItem) => {
-  //   let items = JSON.parse(localStorage.getItem("items"))
-  //   items.forEach((item, index) => {
-  //     if (uptadeItem.id === item.id) {
-  //       item.splice(index, 1, uptadeItem)
-  //     }
-  //   });
-  //   localStorage.setItem('items', JSON.stringify(cardItems))
-  // }
-
-
-
-  // !total price
-  const getCardTotal = () => {
-    return cardItems.reduce((sum, { quantity }) => sum + quantity, 0)
-  }
-
-
   const clickBtn = () => {
     setFaq(!faq)
   }
   const clickHamburger = () => {
     setOpen(!open)
   }
+
+
+  // page pagination
+  const [currentButton, setCurrentButton] = useState(1)
+
+  const [currentPage, setCurrentPage] = useState(1)
+  const [blogPerPage] = useState(9)
+  const indexOfLastBlog = currentPage * blogPerPage
+  const indexOfFirstBlog = indexOfLastBlog - blogPerPage
+  const currentBlog = blog?.slice(indexOfFirstBlog, indexOfLastBlog)
+  // const totalPagesNum = Math.ceil(blog?.length / blogPerPage)
+
+  useEffect(() => {
+    setCurrentPage(currentButton)
+  }, [currentButton, setCurrentPage])
+
   const Values = {
     clickHamburger,
     open,
@@ -111,7 +119,7 @@ function Context({ children }) {
     getData,
     cardItems,
     emptyBasket,
-    handleClick, artData,blog
+    handleClick, artData, blog, filterArtItems, currentButton,setCurrentButton, setBlogItems, blogItems,currentBlog 
   }
   return (
     <mainContext.Provider value={Values}>

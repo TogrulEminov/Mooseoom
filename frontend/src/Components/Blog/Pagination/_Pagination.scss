@@ -1,0 +1,54 @@
+.pagination {
+    margin: 10px 0;
+    text-align: center;
+
+    ul {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        li {
+            user-select: none;
+            margin: 0 10px;
+            cursor: pointer;
+            font-size: 20px;
+            font-family: 'Crimson Text', serif;
+        }
+
+        .pageItem {
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #ddd;
+            border-radius: 50%;
+            color: #000;
+            cursor: pointer;
+
+        }
+
+        .pageNotDisabled {
+            cursor: pointer;
+            color: green;
+            font-family: 'Crimson Text', serif;
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+        .disabled {
+            cursor: not-allowed;
+            color: red;
+            font-weight: bold !important;
+            font-family: 'Crimson Text', serif;
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+        .active {
+            background-color: #000;
+            color: #fff;
+            border-color: #000;
+        }
+    }
+}

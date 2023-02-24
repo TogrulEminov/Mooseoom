@@ -9,7 +9,9 @@ const ArtDesign = () => {
         <div className='artDesign'>
             <div className="container">
                 <div className="row">
-                    {artData && artData.map((item) => (
+                    {artData && artData
+                    .filter((item)=>item.title==="Gallery Hall")
+                    .map((item) => (
                         <div className="col-4 col-lg-4 col-md-6 col-xs-12 col-s-12 cardImage" key={item._id}>
                             <div className='image'>
                                 <img src={item.artPath} alt={item.name} />

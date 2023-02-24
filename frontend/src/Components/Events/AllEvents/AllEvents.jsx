@@ -1,41 +1,42 @@
 import React, { useContext } from 'react'
 import { mainContext } from '../../../Context/Context'
 import "./_AllEvents.scss"
-import {Link} from "react-router-dom"
+import { Link } from "react-router-dom"
 const AllEvents = () => {
-    const { blog } = useContext(mainContext)
+    const { blog, blogItems, filterArtItems, setBlogItems } = useContext(mainContext)
+
     return (
         <div className='allEvents'>
             <div className="container">
                 <div className="allEventHead">
                     <div className="row">
                         <div className="content">
-                            <button className='active'>All Events</button>
+                            <button onClick={() => setBlogItems(blog)}>All Events</button>
                         </div>
                         <div className="content">
-                            <button>Today</button>
+                            <button onClick={() => filterArtItems("Today")}>Today</button>
                         </div>
                         <div className="content">
-                            <button>This Week</button>
+                            <button onClick={() => filterArtItems("This Week")}>This Week</button>
                         </div>
                         <div className="content">
-                            <button>This Month</button>
+                            <button onClick={() => filterArtItems("This Month")}>This Month</button>
                         </div>
                     </div>
                 </div>
                 <div className="allEventCard">
                     <div className="row">
-                        {blog && blog
-                            .filter(item => item.catagories === "Today" || item.catagories === "This Month" || item.catagories === "This Week")
+                        {blogItems && blogItems
+                            .filter((item) => item.catagories === "Today" || item.catagories === "This Week" || item.catagories === "This Month")
                             .map((item) => (
                                 <div className="col-4 col-lg-4 col-md-6 col-xs-12 col-s-12" key={item._id}>
                                     <div className="card">
                                         <Link to=""><img src={item.blogImage} alt="" /></Link>
                                         <article>
                                             <h3>{item.date}</h3>
-                                       
-                                               <h2><Link to="">{item.title}</Link></h2>
-                                      
+
+                                            <h2><Link to="">{item.title}</Link></h2>
+
                                             <p>{item.information}</p>
                                         </article>
                                     </div>

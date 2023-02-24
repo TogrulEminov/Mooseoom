@@ -26,7 +26,7 @@ router.post("/", (req, res) => {
     const file = req.files.images
     cloudinary.uploader.upload(file.tempFilePath, (err, result) => {
         console.log(result);
-        console.log(result)
+      
         let newArt = new Art({
             name: req.body.name,
             information: req.body.information,

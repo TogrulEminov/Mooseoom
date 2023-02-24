@@ -284,7 +284,7 @@ const NavbarBottom = () => {
                             <li>
                                 <NavLink to="/contuctUs" style={({ isActive }) =>
                                                         isActive ? activeStyle : undefined
-                                                    }>contuct us</NavLink>
+                                                    }>contact us</NavLink>
                             </li>
                         </ul>
                     </div>
