@@ -1,10 +1,12 @@
 import Cart from "../Components/Home1/Cart/Cart";
 import Blog from "../Pages/Blog/Blog";
+import BlogDetails from "../Pages/BlogDetails/BlogDetails";
 import BuyTickets from "../Pages/BuyTickets/BuyTickets";
 import Collections from "../Pages/Collections/Collections";
 import ContuctUs from "../Pages/ContactUS/ContuctUs";
 import Events from "../Pages/Events/Events";
 import Exhibitions from "../Pages/Exhibitions/Exhibitions";
+import GaleryDetails from "../Pages/GaleryDetails/GaleryDetails";
 import Home1 from "../Pages/Home1/Home1";
 import MainRoot1 from "../Pages/MainRoot1";
 import Museum from "../Pages/Museum/Museum";
@@ -39,6 +41,14 @@ export const ROUTES = [
                 element: <OurGalerry />
             },
             {
+                path: "galery/:id",
+                element: <GaleryDetails />
+            },
+            {
+                path: "galery",
+                element: <OurGalerry />
+            },
+            {
                 path: "shop",
                 element: <Shop />
             },
@@ -49,6 +59,10 @@ export const ROUTES = [
             {
                 path: "blog",
                 element: <Blog />
+            },
+            {
+                path: "blogs",
+                element: <BlogDetails />
             },
             {
                 path: "buyticket",

@@ -1,0 +1,30 @@
+.galeryDetail {
+    padding: 40px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .row {
+        justify-content: center;
+
+        .content {
+            h4 {
+                font-size: 20px;
+                font-family: 'Roboto Mono', monospace;
+                color: #000;
+            }
+
+            h1 {
+                font-size: 40px;
+                font-family: 'Crimson Text', serif;
+                color: #000;
+            }
+
+            p {
+                font-size: 20px;
+                color: #000;
+                font-family: 'Amiri', serif;
+            }
+        }
+    }
+}

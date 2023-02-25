@@ -1,5 +1,6 @@
 import { createContext, useEffect, useState } from "react";
 import axios from "axios"
+
 export const mainContext = createContext(null)
 
 function Context({ children }) {
@@ -33,9 +34,6 @@ function Context({ children }) {
   }
 
   const [cardItems, setCardItems] = useState(getLocalStorage())
-
-
-
 
   useEffect(() => {
     getData()

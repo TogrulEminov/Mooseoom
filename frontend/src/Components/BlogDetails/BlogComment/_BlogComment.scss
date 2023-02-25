@@ -1,0 +1,92 @@
+.addComment {
+    padding: 40px 0;
+
+    article {
+        margin: 10px 0;
+
+        h2 {
+            font-size: 40px;
+            font-family: 'Crimson Text', serif;
+            color: #000;
+        }
+    }
+
+    form {
+        width: 100%;
+
+        .content {
+            width: 100%;
+            text-align: center;
+
+            textarea {
+                background-color: #ebebeb;
+                width: 100%;
+                font-family: 'Roboto Mono', monospace;
+                font-size: 16px;
+                padding: 10px;
+                min-height: 200px;
+                resize: none;
+                color: #000;
+                outline: none;
+                border: 1px solid #ddd;
+            }
+
+            p {
+                margin: 15px 0;
+                color: red;
+                font-family: 'Roboto Mono', monospace;
+                font-size: 15px;
+            }
+
+            button {
+                background-color: #000;
+                color: #fff;
+                border: none;
+                padding: 15px;
+                width: 100%;
+                cursor: pointer;
+                transition: .6s;
+
+                &:hover {
+                    background-color: gray;
+                }
+            }
+
+            .row {
+                justify-content: space-between;
+
+                .inputOne {
+                    margin: 0 -16px;
+
+                    input {
+                        color: #000;
+                        background-color: #ebebeb;
+                        border: 1px solid #ddd;
+                        outline: none;
+                        width: 100%;
+                        padding: 10px;
+                        font-family: 'Roboto Mono', monospace;
+                    }
+
+                    p {
+                        margin: 15px 0;
+                        color: red;
+                        font-family: 'Roboto Mono', monospace;
+                        font-size: 15px;
+                    }
+                }
+            }
+        }
+    }
+}
+@media only screen and (max-width:576px) {
+    .addComment {
+        article {
+            h2 {
+                font-size: 25px;
+            }
+        }
+    
+    }
+
+}
