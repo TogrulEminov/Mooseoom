@@ -1,0 +1,141 @@
+.contactBody {
+    position: relative;
+    top: -120px;
+
+    .row {
+        justify-content: center;
+
+        .card {
+            margin: 20px -17px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #000;
+            background-color: #fff;
+            min-height: 500px;
+
+            article {
+                text-align: center;
+
+                .icon {
+                    svg {
+                        font-size: 60px;
+                        color: #000;
+                    }
+
+                    &::after {
+                        content: "";
+                        position: relative;
+                        display: block;
+                        width: 40px;
+                        height: 2px;
+                        z-index: 1000;
+                        left: 50%;
+                        top: 20px;
+                        transform: translateX(-50%);
+                        background-color: #000;
+                        margin-bottom: 30px;
+                    }
+                }
+
+                h3 {
+                    font-family: 'Crimson Text', serif;
+                    font-size: 25px;
+                    padding: 10px 0;
+                }
+
+                .content {
+                    padding: 20px 0;
+
+                    p {
+                        color: rgb(83, 82, 82);
+                        font-family: 'Roboto Mono', monospace;
+                        font-size: 16px;
+                        margin: 10px 0;
+                    }
+                }
+
+                a {
+                    font-size: 16px;
+                    color: #000;
+                    font-family: 'Roboto Mono', monospace;
+                    transition: .6s;
+
+                    &:hover {
+                        color: gray;
+                    }
+                }
+            }
+        }
+
+        .card-2 {
+
+            padding: 0px 50px;
+            min-height: 550px;
+            background-color: #000;
+
+            article {
+                .icon {
+                    svg {
+                        color: #fff;
+                    }
+
+                    &::after {
+                        background-color: #fff;
+                    }
+                }
+
+                h3 {
+                    color: #fff;
+                }
+
+                // .content {
+                //     p {
+                //         color: #fff !important;
+                //     }
+                // }
+                a {
+                    color: #fff;
+                }
+            }
+        }
+    }
+}
+
+
+@media only screen and (max-width:992px) {
+    .contactBody {
+        position: relative;
+        top: 0px;
+
+        .row {
+            justify-content: center;
+
+            .card {
+                margin:20px 0px;
+                min-height: 500px;
+            }
+
+            .card-2 {
+                min-height: 500px;
+            }
+        }
+    }
+}
+@media only screen and (max-width:768px) {
+    .contactBody {
+        top: -90px;
+        .row {
+            justify-content: center;
+
+            .card {
+                margin:20px 0px;
+                min-height: 500px;
+            }
+
+            .card-2 {
+                min-height: 500px;
+            }
+        }
+    }
+}

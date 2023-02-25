@@ -1,0 +1,362 @@
+.allContactEnd {
+    padding: 40px 0;
+
+    .row {
+        justify-content: space-between;
+        align-items: flex-start;
+
+        .contactEndLeft {
+            article {
+                color: #000;
+
+                h1 {
+                    font-size: 50px;
+                    font-family: 'Crimson Text', serif;
+                    font-weight: 700;
+                    padding-bottom: 20px;
+                }
+
+                p {
+                    font-size: 16px;
+                    font-family: 'Roboto Mono', monospace;
+                    font-weight: 300;
+                    line-height: 32px;
+                    padding-bottom: 14px;
+                }
+            }
+
+            .swiperCard {
+                user-select: none;
+                margin: 40px 0;
+
+                h3 {
+                    font-family: 'Crimson Text', serif;
+                    font-size: 25px;
+                    margin-bottom: 30px;
+                }
+
+                ul {
+                    margin: 20px 0;
+
+                    li {
+                        margin: 5px 0;
+                        display: flex;
+                        align-items: center;
+
+                        .icon {
+                            width: 35px;
+                            height: 35px;
+                            border: 1px solid #000;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            border-radius: 50%;
+                            background-color: #000;
+
+                            svg {
+                                color: #fff;
+                                font-size: 14px;
+                            }
+                        }
+
+                        p {
+                            color: #000;
+                            font-family: 'Roboto Mono', monospace;
+                            font-size: 16px;
+                            margin-left: 20px;
+                        }
+
+                        a {
+                            color: #000;
+                            font-family: 'Roboto Mono', monospace;
+                            font-size: 16px;
+                            margin-left: 20px;
+                            transition: .5s;
+
+                            &:hover {
+                                color: red;
+                            }
+                        }
+                    }
+                }
+
+
+            }
+
+            .swiper-button-next {
+                position: absolute;
+                top: 36px;
+                color: gray;
+
+                &::after {
+                    --swiper-navigation-size: 24px;
+                }
+            }
+
+            .swiper-button-prev {
+                color: gray;
+                position: absolute;
+                top: 36px;
+                left: 85%;
+
+                &::after {
+                    --swiper-navigation-size: 24px;
+                }
+            }
+
+            .socialContact {
+                margin-top: 30px;
+
+                ul {
+                    display: flex;
+                    align-items: center;
+
+                    li {
+                        display: flex;
+                        align-items: center;
+                        margin-right: 40px;
+
+                        .icon {
+                            svg {
+                                font-size: 18px;
+                            }
+                        }
+
+                        a {
+                            font-size: 18px;
+                            font-family: 'Roboto Mono', monospace;
+                            margin-left: 6px;
+                            color: #000;
+                        }
+                    }
+                }
+            }
+        }
+
+        .contactEndRight {
+            h1 {
+                padding-bottom: 20px;
+                text-align: center;
+                font-size: 50px;
+                font-family: 'Crimson Text', serif;
+            }
+
+            form {
+                .row {
+                    justify-content: space-between;
+
+                    .allInputs {
+                        width: 100%;
+
+                        .inputOne {
+                            margin: 10px 0;
+
+                            input {
+                                padding: 10px;
+                                width: 100%;
+                                border: 1px solid #ddd;
+                                outline: none;
+
+                                ::placeholder {
+                                    color: gray;
+                                }
+                            }
+
+                            p {
+                                color: red;
+                                font-family: 'Roboto Mono', monospace;
+                                font-size: 16px;
+                                margin: 4px 0;
+                            }
+
+                            textarea {
+                                border: 1px solid #ddd;
+                                outline: none;
+                                width: 100%;
+                                height: 150px;
+                                padding: 10px;
+                                font-size: 16px;
+                                resize: none;
+
+                                ::placeholder {
+                                    color: gray;
+                                }
+                            }
+
+                            button {
+                                padding: 10px;
+                                width: 100%;
+                                color: #fff;
+                                font-family: 'Amiri', serif;
+                                background-color: #000;
+                                font-size: 18px;
+                                border: none;
+                                cursor: pointer;
+                                transition: .5s;
+
+                                &:hover {
+                                    background-color: gray;
+                                }
+                            }
+
+
+                        }
+                    }
+                }
+
+            }
+        }
+    }
+}
+
+@media only screen and (max-width:992px) {
+    .allContactEnd {
+        .row {
+            .contactEndLeft {
+                article {
+                    h1 {
+                        font-size: 35px;
+                    }
+
+                    p {
+                        font-size: 15px;
+                    }
+                }
+
+                .swiper-button-next {
+                    position: absolute;
+                    top: 43px;
+                    color: gray;
+                }
+
+                .swiper-button-prev {
+                    top: 43px;
+                    left: 80%;
+                }
+
+                .socialContact {
+                    ul {
+                        flex-wrap: wrap;
+
+                        li {
+                            margin: 10px 40px 10px 0;
+                        }
+                    }
+                }
+            }
+
+            .contactEndRight {
+                h1 {
+                    font-size: 33px;
+                }
+            }
+        }
+    }
+
+}
+
+@media only screen and (max-width:768px) {
+    .allContactEnd {
+        .row {
+            .contactEndLeft {
+                article {
+                    h1 {
+                        font-size: 35px;
+                    }
+
+                    p {
+                        font-size: 15px;
+                    }
+                }
+
+                .swiper-button-next {
+                    position: absolute;
+                    top: 43px;
+                    color: gray;
+                }
+
+                .swiper-button-prev {
+                    top: 43px;
+                    left: 80%;
+                }
+
+                .socialContact {
+                    ul {
+                        flex-wrap: wrap;
+
+                        li {
+                            margin: 10px 40px 10px 0;
+                        }
+                    }
+                }
+            }
+
+            .contactEndRight {
+                h1 {
+                    font-size: 33px;
+                }
+            }
+        }
+    }
+
+}
+
+@media only screen and (max-width:576px) {
+    .allContactEnd {
+        .row {
+            .contactEndLeft {
+                article {
+                    h1 {
+                        font-size: 35px;
+                    }
+
+                    p {
+                        font-size: 15px;
+                    }
+                }
+
+                .swiper-button-next {
+                    position: absolute;
+                    top: 45px;
+                    color: gray;
+                }
+
+                .swiper-button-prev {
+                    top: 45px;
+                    left: 70%;
+                }
+
+                ul {
+                    li {
+
+                        a {
+                            width: 230px;
+                            overflow: hidden;
+                            font-size: 16px;
+
+                        }
+                    }
+                }
+
+                .socialContact {
+                    ul {
+                        flex-wrap: wrap;
+
+                        li {
+                            margin: 10px 40px 10px 0;
+                        }
+                    }
+                }
+            }
+
+            .contactEndRight {
+                margin-top: 20px;
+
+                h1 {
+                    font-size: 33px;
+                }
+            }
+        }
+    }
+
+}
