@@ -27,18 +27,23 @@ router.post("/", (req, res) => {
     cloudinary.uploader.upload(file.tempFilePath, (err, result) => {
         console.log(result);
       
-        let newArt = new Art({
-            name: req.body.name,
-            information: req.body.information,
-            percantagePrice: req.body.percantagePrice,
-            title: req.body.title,
-            workers: req.body.workers,
-            artPath: result.secure_url,
-
-        })
+        
         try {
-            const savedPost = newArt.save()
-            res.json(savedPost)
+            let newArt = new Art({
+                name: req.body.name,
+                information: req.body.information,
+                percantagePrice: req.body.percantagePrice,
+                title: req.body.title,
+                workers: req.body.workers,
+                artPath: result.secure_url,
+    
+            })
+            newArt.save()
+            const savedPost = newArt
+            res.json({
+                message: "Success",
+                data: savedPost
+            })
         } catch (err) {
             res.json({ message: err })
         }

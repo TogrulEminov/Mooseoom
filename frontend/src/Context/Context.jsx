@@ -11,6 +11,7 @@ function Context({ children }) {
   const [artData, setArtData] = useState(null)
   const [blog, setBlog] = useState(null)
   const [blogItems, setBlogItems] = useState(blog)
+  const [search, setSearch] = useState("");
   const url = "http://localhost:5555"
 
   // !filter blog Item
@@ -39,9 +40,8 @@ function Context({ children }) {
     getData()
     getArtData()
     getBlogData()
-  
-  }, [])
 
+  }, [])
 
 
   useEffect(() => {
@@ -49,28 +49,45 @@ function Context({ children }) {
   }, [cardItems])
 
 
-
+  // !search data
+  const searchData = (e) => {
+    setSearch(e.target.value);
+  };
   //! get data
   const getData = async () => {
     const response = await axios.get(`${url}/posters`)
     setData(response.data);
   };
-  //! get data
+   // !del art data
+   const delShopData = (index) => {
+    axios.delete(`http://localhost:5555/posters/${index}`);
+    getData();
+  };
+  //! get art data
   const getArtData = async () => {
     const response = await axios.get(`${url}/art`)
     setArtData(response.data);
+  };
+  // !del art data
+  const delData = (index) => {
+    axios.delete(`http://localhost:5555/art/${index}`);
+    getArtData();
   };
   //! get data
   const getBlogData = async () => {
     const response = await axios.get(`${url}/blog`)
     setBlog(response.data);
   };
+  // !del Blog data
+  const delBlogData = (index) => {
+    axios.delete(`http://localhost:5555/blog/${index}`);
+    getBlogData();
+  };
   // !handle add
   const handleClick = (item) => {
     if (cardItems.indexOf(item) !== -1) return
     setCardItems([...cardItems, item])
   }
-  //! load more page
 
   //! empty basket
   const emptyBasket = (id) => {
@@ -128,7 +145,6 @@ function Context({ children }) {
   }, [shopButton, setCurrentShopPage])
 
 
-
   const Values = {
     clickHamburger,
     open,
@@ -149,8 +165,12 @@ function Context({ children }) {
     setShopButton,
     currentShop,
     shopButton,
-    getArtData
-
+    getArtData,
+    search,
+    searchData,
+    delData,
+    delBlogData,
+    delShopData
   }
   return (
     <mainContext.Provider value={Values}>

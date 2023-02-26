@@ -4,15 +4,16 @@ import { mainContext } from '../../../Context/Context'
 import { Link } from "react-router-dom"
 import "./_Shop.scss"
 import Pagination from './Pagination/Pagination'
+import ShopCard from './ShopCard/ShopCard'
 const ShopContent = () => {
-    const { currentShop, handleClick } = useContext(mainContext)
+    const { currentShop } = useContext(mainContext)
     useEffect(() => {
         window.scrollTo({
-               top: 0,
-               left: 0,
-               behavior: "smooth"
-             });
-     },[])
+            top: 0,
+            left: 0,
+            behavior: "smooth"
+        });
+    }, [])
     return (
         <div className="shopCardContent">
             <div className='shopBackground'>
@@ -27,39 +28,7 @@ const ShopContent = () => {
                     {
                         currentShop && currentShop.map((e, index) => (
                             <div key={index} className='col-3 col-lg-3 col-md-4 col-s-6  col-xs-12'>
-                                <div className="shopCard" >
-                                    <div className="shopCardImage">
-                                        <Link to={`${e._id}`}>
-                                            <img src={e.imagePath} alt="" />
-                                        </Link>
-
-                                        <div className='sale'>
-                                            {e.sale ? <span>sale</span> : <></>}
-                                        </div>
-                                    </div>
-                                    <article>
-                                        <h3>{e.name}</h3>
-                                        <div className="cardRate">
-                                            <ul>
-                                                <li><AiFillStar /></li>
-                                                <li><AiFillStar /></li>
-                                                <li><AiFillStar /></li>
-                                                <li><AiFillStar /></li>
-                                                <li><AiFillStar /></li>
-
-                                            </ul>
-                                        </div>
-                                        {e.sale ?
-                                            <div className="articleContent">
-                                                <del>£{e.price}</del>
-                                                <span>£{e.price - parseInt((e.price * e.percantagePrice) / 100)}.00</span>
-                                            </div> : <div className="articleContent">
-                                                <span>£{e.price}</span>
-                                            </div>
-                                        }
-                                        <button onClick={() => handleClick(e)}>Add to card</button>
-                                    </article>
-                                </div>
+                                <ShopCard e={e} />
                             </div>
                         ))
                     }
