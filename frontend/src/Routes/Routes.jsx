@@ -1,28 +1,32 @@
-import Cart from "../Components/Home1/Cart/Cart";
-import Blog from "../Pages/Blog/Blog";
-import BlogDetails from "../Pages/BlogDetails/BlogDetails";
-import BuyTickets from "../Pages/BuyTickets/BuyTickets";
-import Collections from "../Pages/Collections/Collections";
-import ContuctUs from "../Pages/ContactUS/ContuctUs";
-import Events from "../Pages/Events/Events";
-import Exhibitions from "../Pages/Exhibitions/Exhibitions";
-import GaleryDetails from "../Pages/GaleryDetails/GaleryDetails";
-import Home1 from "../Pages/Home1/Home1";
-import MainRoot1 from "../Pages/MainRoot1";
-import Museum from "../Pages/Museum/Museum";
-import NotFound from "../Pages/NotFound/NotFound";
-import OurGalerry from "../Pages/OurGalery/OurGalerry";
-import Shop from "../Pages/Shop/Shop";
-import ShopDetail from "../Pages/ShopDetail/ShopDetail";
+import Cart from "../Components/Client/Home/Cart/Cart";
+import AdminRoot from "../Pages/Admin/AdminRoot";
+import Art from "../Pages/Admin/Art/Art";
+import BlogAdmin from "../Pages/Admin/Blog/BlogAdmin";
+import ShopAdmin from "../Pages/Admin/Shop/ShopAdmin";
+import Blog from "../Pages/Client/Blog/Blog";
+import BlogDetails from "../Pages/Client/BlogDetails/BlogDetails";
+import BuyTickets from "../Pages/Client/BuyTickets/BuyTickets";
+import Collections from "../Pages/Client/Collections/Collections";
+import ContactUs from "../Pages/Client/ContactUS/ContactUs";
+import Events from "../Pages/Client/Events/Events";
+import Exhibitions from "../Pages/Client/Exhibitions/Exhibitions";
+import GaleryDetails from "../Pages/Client/GaleryDetails/GaleryDetails";
+import Home from "../Pages/Client/Home/Home";
+import MainRoot from "../Pages/Client/MainRoot";
+import Museum from "../Pages/Client/Museum/Museum";
+import NotFound from "../Pages/Client/NotFound/NotFound";
+import OurGalerry from "../Pages/Client/OurGalery/OurGalerry";
+import Shop from "../Pages/Client/Shop/Shop";
+import ShopDetail from "../Pages/Client/ShopDetail/ShopDetail";
 
 export const ROUTES = [
     {
         path: "/",
-        element: <MainRoot1 />,
+        element: <MainRoot />,
         children: [
             {
                 path: "",
-                element: <Home1 />
+                element: <Home />
             },
             {
                 path: "events",
@@ -61,7 +65,7 @@ export const ROUTES = [
                 element: <Blog />
             },
             {
-                path: "blogs",
+                path: "blog/:id",
                 element: <BlogDetails />
             },
             {
@@ -74,7 +78,7 @@ export const ROUTES = [
             },
             {
                 path: "contuctUs",
-                element: <ContuctUs />
+                element: <ContactUs />
             },
             {
                 path: "cart",
@@ -86,6 +90,24 @@ export const ROUTES = [
             },
 
 
+        ]
+    },
+    {
+        path: "/admin/",
+        element: <AdminRoot />,
+        children: [
+            {
+                path: "art",
+                element: <Art />
+            },
+            {
+                path:"blog",
+                element: <BlogAdmin />
+            },
+            {
+                path: "shop",
+                element: <ShopAdmin />
+            },
         ]
     }
 ]

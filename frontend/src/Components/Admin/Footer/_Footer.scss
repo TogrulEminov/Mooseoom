@@ -1,0 +1,33 @@
+.footerAdmin {
+    padding: 20px 0;
+    background-color: #000;
+
+    .row {
+        justify-content: center;
+
+        .content {
+            text-align: center;
+
+            p {
+                font-size: 30px;
+                font-family: 'Roboto Mono', monospace;
+                letter-spacing: 1px;
+                color: #fff;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width:576px) {
+    .footerAdmin {
+        .row {
+            justify-content: center;
+            .content {
+                p {
+                    font-size: 20px;
+                    line-height: 30px;
+                }
+            }
+        }
+    }
+}

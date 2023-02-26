@@ -39,6 +39,7 @@ function Context({ children }) {
     getData()
     getArtData()
     getBlogData()
+  
   }, [])
 
 
@@ -94,19 +95,39 @@ function Context({ children }) {
   }
 
 
-  // page pagination
+  // ! blog page pagination
   const [currentButton, setCurrentButton] = useState(1)
-
   const [currentPage, setCurrentPage] = useState(1)
   const [blogPerPage] = useState(9)
   const indexOfLastBlog = currentPage * blogPerPage
   const indexOfFirstBlog = indexOfLastBlog - blogPerPage
   const currentBlog = blog?.slice(indexOfFirstBlog, indexOfLastBlog)
-  // const totalPagesNum = Math.ceil(blog?.length / blogPerPage)
-
   useEffect(() => {
     setCurrentPage(currentButton)
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "smooth"
+    });
   }, [currentButton, setCurrentPage])
+
+  // !shop page pagination 
+  const [shopButton, setShopButton] = useState(1)
+  const [currentShopPage, setCurrentShopPage] = useState(1)
+  const [shopPerPage] = useState(16)
+  const indexOfLastShop = currentShopPage * shopPerPage
+  const indexOfFirstShop = indexOfLastShop - shopPerPage
+  const currentShop = data?.slice(indexOfFirstShop, indexOfLastShop)
+  useEffect(() => {
+    setCurrentShopPage(shopButton)
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "smooth"
+    });
+  }, [shopButton, setCurrentShopPage])
+
+
 
   const Values = {
     clickHamburger,
@@ -117,7 +138,19 @@ function Context({ children }) {
     getData,
     cardItems,
     emptyBasket,
-    handleClick, artData, blog, filterArtItems, currentButton,setCurrentButton, setBlogItems, blogItems,currentBlog 
+    handleClick, artData,
+    blog,
+    filterArtItems,
+    currentButton,
+    setCurrentButton,
+    setBlogItems,
+    blogItems,
+    currentBlog,
+    setShopButton,
+    currentShop,
+    shopButton,
+    getArtData
+
   }
   return (
     <mainContext.Provider value={Values}>

@@ -1,0 +1,425 @@
+.navbarBottom {
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    .row {
+        justify-content: space-between;
+
+        .hamburger {
+            display: none;
+
+            button {
+                font-size: 30px;
+                background-color: transparent;
+                border: none;
+                cursor: pointer;
+            }
+        }
+
+        .navbarBottomLinks {
+            position: relative;
+
+            ul {
+                display: flex;
+                align-items: center;
+
+                li {
+                    padding: 21px 5px;
+                    margin: 0 12px;
+
+                    &:hover .submenu {
+                        display: flex;
+                    }
+
+                    a {
+                        font-size: 16px;
+                        font-family: 'Amiri', serif;
+                        text-transform: capitalize;
+                        color: #111;
+                        font-weight: 600;
+
+                        &:hover {
+                            color: red;
+                        }
+                    }
+
+                    .submenu {
+                        border-radius: 5px;
+                        position: absolute;
+                        z-index: 100;
+                        top: 65px;
+                        width: 100px;
+                        left: -18px;
+                        display: none;
+                        align-items: center;
+                        justify-content: center;
+                        background-color: #fff;
+                        border: 1px solid #ffffff54;
+
+                        ul {
+                            display: block;
+                            width: 100%;
+                            text-align: center;
+
+                            li { 
+                                padding: 4px 0;
+                                margin: 0;
+                                border-bottom: 1px solid #dddddd46;
+                            }
+                        }
+                    }
+
+                    &:hover .submenu-2 {
+                        display: block;
+                    }
+
+                    .submenu-2 {
+                        position: absolute;
+                        top: 67px;
+                        left: -75px;
+                        z-index: 100;
+                        background-color: #fff;
+                        border: 1px solid #dddddd46;
+                        display: none;
+                        .row {
+                            width: 600px;
+                            padding: 10px 0;
+
+                            .submenuLeft {
+                                border-right: 2px solid gray;
+                                h3 {
+                                    font-size: 20px;
+                                    font-weight: bold;
+                                    font-family: 'Crimson Text', serif;
+                                    padding:4px 0;
+                                }
+
+                                ul {
+                                    display: block;
+
+                                    li {
+                                        position: relative;
+                                        margin: 0 -15px;
+                                        padding: 5px 0 !important;
+
+                                        &:hover .submenu-3 {
+                                            display: flex;
+                                        }
+
+                                        .submenu-4 {
+                                            min-width: 150px !important;
+                                        }
+
+                                        .submenu-3 {
+                                            position: absolute;
+                                            left: 100%;
+                                            top: 10px;
+                                            min-width: 230px;
+                                            background-color: #fff;
+                                            display: none;
+                                            align-items: center;
+                                            border: 1px solid #dddddd7c;
+                                            justify-content: center;
+
+                                            ul {
+                                                li {
+                                                    margin: 0 -10px;
+                                                    padding: 4px 0 !important;
+                                                }
+                                            }
+                                        }
+
+                                        &:hover {
+                                            .plus {
+                                                opacity: 0;
+                                                transition: .6s;
+                                            }
+
+                                            .minus {
+                                                opacity: 1;
+                                                transition: .6s;
+
+                                            }
+                                        }
+
+                                        a {
+                                            padding: 0 15px;
+                                        }
+
+                                        .plus {
+                                            transition: .6s;
+                                            opacity: 1;
+                                            position: relative;
+                                            left: 59%;
+                                        }
+
+                                        .minus {
+                                            transition: .6s;
+                                            opacity: 0;
+                                            left: 54%;
+                                            position: relative;
+                                        }
+
+                                        .plus-2 {
+                                            left: 63%;
+                                        }
+
+                                        .minus-2 {
+                                            left: 59%;
+                                        }
+
+                                        .minus-3 {
+                                            left: 66%;
+                                        }
+
+                                        .plus-3 {
+                                            left: 71%;
+                                        }
+                                    }
+                                }
+                            }
+
+                            .submenuRight {
+                                border: 0 !important;
+
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .navbarBottomSocial {
+            ul {
+                display: flex;
+                align-items: center;
+
+                li {
+                    margin-left: 24px;
+
+                    a {
+                        color: #111;
+                    }
+                }
+            }
+        }
+
+        .logoMobile {
+            display: none;
+        }
+
+        .sidebar-nav {
+            display: none;
+            overflow-y: scroll;
+            height: 100vh;
+            width: 300px;
+            background-color: #ffff;
+            position: fixed;
+            z-index: 801;
+            transform: translate(-100%);
+            transition: .7s cubic-bezier(.33, .93, .57, -0.22);
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            left: 0;
+            top: 0;
+
+            .sidebarHead {
+                padding: 10px 20px 15px 20px;
+                border-bottom: 1px solid #ddd;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+                h1 {
+                    font-size: 20px;
+                    color: #111;
+                }
+
+                button {
+                    cursor: pointer;
+                    border: none;
+                    background-color: transparent;
+
+                    svg {
+                        font-size: 30px;
+                        transition: .7s;
+                    }
+                }
+            }
+
+            .sidebarLinks {
+                ul {
+                    li {
+                        cursor: pointer;
+                        padding: 10px 10px 20px 10px;
+                        border-bottom: 1px solid #ddd;
+
+                        .mobileSocial {
+                            display: flex;
+                            align-items: center;
+
+                            a {
+                                margin-right: 20px;
+                            }
+                        }
+
+                        a {
+                            font-size: 16px;
+                            color: #111;
+                            text-transform: capitalize;
+
+                        }
+
+                        .dropdownSide {
+                            display: flex;
+                            align-items: center;
+                            justify-content: space-between;
+
+                            a {
+                                font-size: 16px;
+                                color: #111;
+                                text-transform: capitalize;
+                            }
+                        }
+
+                    }
+
+                    .submenuSide {
+                        padding-bottom: 10px;
+
+                        ul {
+                            li {
+                                padding: 10px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width:1200px) {
+    .navbarBottom {
+        .row {
+            .hamburger {
+                display: block;
+            }
+
+            .logo {
+                display: none;
+            }
+
+            .navbarBottomLinks {
+                display: none;
+            }
+
+            .navbarBottomSocial {
+                display: none;
+            }
+
+            .logoMobile {
+                display: block;
+            }
+
+            .sidebar-nav {
+                display: block;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width:992px) {
+    .navbarBottom {
+        padding: 20px 10px;
+
+        .row {
+            .hamburger {
+                display: block;
+            }
+
+            .logo {
+                display: none;
+            }
+
+            .navbarBottomLinks {
+                display: none;
+            }
+
+            .navbarBottomSocial {
+                display: none;
+            }
+
+            .logoMobile {
+                display: block;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width:768px) {
+    .navbarBottom {
+        padding: 20px 10px;
+
+        .row {
+            justify-content: space-between;
+
+            .hamburger {
+                display: block;
+            }
+
+            .logo {
+                display: none;
+            }
+
+            .navbarBottomLinks {
+                display: none;
+            }
+
+            .navbarBottomSocial {
+                display: none;
+            }
+
+            .logoMobile {
+                display: block;
+            }
+
+            .sidebar-nav {
+                overflow-y: scroll;
+                height: 100vh;
+                width: 280px;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width:576px) {
+    .navbarBottom {
+        padding: 20px 10px;
+
+        .row {
+            .hamburger {
+                display: block;
+            }
+
+            .logo {
+                display: none;
+            }
+
+            .navbarBottomLinks {
+                display: none;
+            }
+
+            .navbarBottomSocial {
+                display: none;
+            }
+
+            .logoMobile {
+                display: block;
+            }
+
+            .sidebar-nav {
+                overflow-y: scroll;
+                height: 100vh;
+                width: 200px;
+            }
+        }
+    }
+}

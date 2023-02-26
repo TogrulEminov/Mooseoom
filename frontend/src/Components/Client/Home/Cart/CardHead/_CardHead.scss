@@ -1,0 +1,23 @@
+.cardHead {
+    padding-bottom: 40px;
+
+    .cardHeadBackround {
+        background: url("../../../../../media//magazine-banner-1024x338-1.jpg") center/cover;
+        min-height: 350px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .row {
+            text-align: center;
+            justify-content: center;
+            .content {
+                h1 {
+                    font-size: 50px;
+                    color: #fff;
+                    font-family: 'Crimson Text', serif;
+                }
+            }
+        }
+    }
+}

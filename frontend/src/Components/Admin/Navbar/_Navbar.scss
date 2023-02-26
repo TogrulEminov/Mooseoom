@@ -1,0 +1,403 @@
+.navbarAdmin {
+    padding: 20px 0;
+    border-bottom: 1px solid #ddd;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+    .row {
+        justify-content: space-between;
+
+        .logo {
+            display: block;
+        }
+
+        .hamburger {
+            display: none;
+
+            button {
+                font-size: 30px;
+                background-color: transparent;
+                border: none;
+                cursor: pointer;
+            }
+        }
+
+        .navbarLinks {
+            ul {
+                display: flex;
+                align-items: center;
+
+                li {
+                    margin: 0 20px;
+
+                    a {
+                        font-size: 16px;
+                        font-family: 'Roboto Mono', monospace;
+                        color: #000;
+                        position: relative;
+
+                        &:before {
+                            content: "";
+                            position: absolute;
+                            width: 100%;
+                            height: 2px;
+                            bottom: 0;
+                            margin: -5px 0;
+                            background-color: #000;
+                            visibility: hidden;
+                            transform: scaleX(0);
+                            transition: all 0.4s ease-in-out 0s;
+                        }
+
+                        &:hover:before {
+                            visibility: visible;
+                            transform: scaleX(1);
+                        }
+                    }
+                }
+            }
+        }
+
+        .logoMobile {
+            display: none;
+        }
+
+        .sidebar-nav {
+            display: none;
+            overflow-y: scroll;
+            height: 100vh;
+            width: 300px;
+            background-color: #ffff;
+            position: fixed;
+            z-index: 801;
+            transform: translate(-100%);
+            transition: .7s cubic-bezier(.33, .93, .57, -0.22);
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            left: 0;
+            top: 0;
+
+            .sidebarHead {
+                padding: 10px 20px 15px 20px;
+                border-bottom: 1px solid #ddd;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+                h1 {
+                    font-size: 20px;
+                    color: #111;
+                }
+
+                button {
+                    cursor: pointer;
+                    border: none;
+                    background-color: transparent;
+
+                    svg {
+                        font-size: 30px;
+                        transition: .7s;
+                    }
+                }
+            }
+
+            .sidebarLinks {
+                ul {
+                    li {
+                        cursor: pointer;
+                        padding: 10px 10px 20px 10px;
+                        border-bottom: 1px solid #ddd;
+
+                        a {
+                            font-size: 16px;
+                            color: #111;
+                            text-transform: capitalize;
+
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width:1200px) {
+    .navbarAdmin {
+        padding: 20px 0;
+        border-bottom: 1px solid #ddd;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+        .row {
+            padding: 0 10px;
+            justify-content: space-between;
+
+            .hamburger {
+                display: block;
+
+                button {
+                    font-size: 30px;
+                    background-color: transparent;
+                    border: none;
+                    cursor: pointer;
+                }
+            }
+
+            .logo {
+                display: none;
+            }
+
+            .navbarLinks {
+                display: none;
+
+                ul {
+                    display: flex;
+                    align-items: center;
+
+                    li {
+                        margin: 0 20px;
+
+                        a {
+                            font-size: 16px;
+                            font-family: 'Roboto Mono', monospace;
+                            color: #000;
+                            position: relative;
+
+                            &:before {
+                                content: "";
+                                position: absolute;
+                                width: 100%;
+                                height: 2px;
+                                bottom: 0;
+                                margin: -5px 0;
+                                background-color: #000;
+                                visibility: hidden;
+                                transform: scaleX(0);
+                                transition: all 0.4s ease-in-out 0s;
+                            }
+
+                            &:hover:before {
+                                visibility: visible;
+                                transform: scaleX(1);
+                            }
+                        }
+                    }
+                }
+            }
+
+            .logoMobile {
+                display: block;
+            }
+
+            .sidebar-nav {
+                display: block;
+                overflow-y: scroll;
+                height: 100vh;
+                width: 300px;
+                background-color: #ffff;
+                position: fixed;
+                z-index: 801;
+                transform: translate(-100%);
+                transition: .7s cubic-bezier(.33, .93, .57, -0.22);
+                box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+                left: 0;
+                top: 0;
+
+                .sidebarHead {
+                    padding: 10px 20px 15px 20px;
+                    border-bottom: 1px solid #ddd;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+
+                    h1 {
+                        font-size: 20px;
+                        color: #111;
+                    }
+
+                    button {
+                        cursor: pointer;
+                        border: none;
+                        background-color: transparent;
+
+                        svg {
+                            font-size: 30px;
+                            transition: .7s;
+                        }
+                    }
+                }
+
+                .sidebarLinks {
+                    ul {
+                        li {
+                            cursor: pointer;
+                            padding: 10px 10px 20px 10px;
+                            border-bottom: 1px solid #ddd;
+
+                            a {
+                                font-size: 16px;
+                                color: #111;
+                                text-transform: capitalize;
+
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width:768px) {
+    .navbarAdmin {
+        padding: 20px 0;
+        border-bottom: 1px solid #ddd;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+        .row {
+            padding: 0 10px;
+            justify-content: space-between;
+
+            .hamburger {
+                display: block;
+
+                button {
+                    font-size: 30px;
+                    background-color: transparent;
+                    border: none;
+                    cursor: pointer;
+                }
+            }
+
+            .logo {
+                display: none;
+            }
+
+            .navbarLinks {
+                display: none;
+
+                ul {
+                    display: flex;
+                    align-items: center;
+
+                    li {
+                        margin: 0 20px;
+
+                        a {
+                            font-size: 16px;
+                            font-family: 'Roboto Mono', monospace;
+                            color: #000;
+                            position: relative;
+
+                            &:before {
+                                content: "";
+                                position: absolute;
+                                width: 100%;
+                                height: 2px;
+                                bottom: 0;
+                                margin: -5px 0;
+                                background-color: #000;
+                                visibility: hidden;
+                                transform: scaleX(0);
+                                transition: all 0.4s ease-in-out 0s;
+                            }
+
+                            &:hover:before {
+                                visibility: visible;
+                                transform: scaleX(1);
+                            }
+                        }
+                    }
+                }
+            }
+
+            .logoMobile {
+                display: block;
+            }
+
+            .sidebar-nav {
+                overflow-y: scroll;
+                height: 100vh;
+                width: 280px;
+
+
+            }
+        }
+    }
+
+}
+@media only screen and (max-width:768px) {
+    .navbarAdmin {
+        padding: 20px 0;
+        border-bottom: 1px solid #ddd;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+        .row {
+            padding: 0 10px;
+            justify-content: space-between;
+
+            .hamburger {
+                display: block;
+
+                button {
+                    font-size: 30px;
+                    background-color: transparent;
+                    border: none;
+                    cursor: pointer;
+                }
+            }
+
+            .logo {
+                display: none;
+            }
+
+            .navbarLinks {
+                display: none;
+
+                ul {
+                    display: flex;
+                    align-items: center;
+
+                    li {
+                        margin: 0 20px;
+
+                        a {
+                            font-size: 16px;
+                            font-family: 'Roboto Mono', monospace;
+                            color: #000;
+                            position: relative;
+
+                            &:before {
+                                content: "";
+                                position: absolute;
+                                width: 100%;
+                                height: 2px;
+                                bottom: 0;
+                                margin: -5px 0;
+                                background-color: #000;
+                                visibility: hidden;
+                                transform: scaleX(0);
+                                transition: all 0.4s ease-in-out 0s;
+                            }
+
+                            &:hover:before {
+                                visibility: visible;
+                                transform: scaleX(1);
+                            }
+                        }
+                    }
+                }
+            }
+
+            .logoMobile {
+                display: block;
+            }
+
+            .sidebar-nav {
+                overflow-y: scroll;
+                height: 100vh;
+                width: 200px;
+
+            }
+        }
+    }
+
+}
+

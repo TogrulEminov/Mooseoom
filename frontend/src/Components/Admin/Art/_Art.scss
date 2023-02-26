@@ -1,0 +1,91 @@
+.artAdmin {
+    padding: 40px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .row {
+        justify-content: center;
+        text-align: center;
+
+        .postArtInformation {
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+            a {
+                display: block;
+                font-size: 40px;
+                text-decoration: underline;
+                color: blue;
+                font-family: 'Crimson Text', serif;
+                padding: 20px 0;
+            }
+
+            form {
+                width: 60%;
+                margin: 0 auto;
+
+                .allInput {
+                    width: 100%;
+
+                    .inputOne {
+                        margin: 10px 0;
+
+                        input {
+                            padding: 10px;
+                            border: 1px solid #ddd;
+                            outline: none;
+                            width: 100%;
+                        }
+
+                        p {
+                            margin: 4px 0;
+                            color: red;
+                            font-family: 'Roboto Mono', monospace;
+                            font-size: 15px;
+                        }
+
+                        textarea {
+                            padding: 10px;
+                            width: 100%;
+                            min-height: 110px;
+                            resize: none;
+                            outline: none;
+                            border: 1px solid #ddd;
+                        }
+
+                        button {
+                            padding: 10px 40px;
+                            color: #fff;
+                            background-color: #000;
+                            font-family: 'Amiri', serif;
+                            margin: 10px 0;
+                            cursor: pointer;
+                            border-radius: 5px;
+                            border: none;
+                        }
+                    }
+                }
+            }
+
+        }
+    }
+}
+
+@media only screen and (max-width:992px) {
+    .artAdmin {
+        .row {
+            .postArtInformation {
+                a {
+                    font-size: 20px;
+                }
+                form {
+                    width: 80%;
+                }
+    
+            }
+        }
+    }
+    
+}
