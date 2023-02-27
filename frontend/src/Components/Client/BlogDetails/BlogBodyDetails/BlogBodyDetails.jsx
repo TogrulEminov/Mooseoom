@@ -2,7 +2,8 @@ import React from 'react'
 import "./_BlogBodyDetails.scss"
 import { Link } from "react-router-dom"
 import BlogComment from '../BlogComment/BlogComment'
-const BlogBodyDetails = () => {
+const BlogBodyDetails = ({data}) => {
+    
     return (
         <div className='blogBodyDetails'>
             <div className="container">
@@ -10,10 +11,10 @@ const BlogBodyDetails = () => {
                     <div className="col-8 col-lg-8 col-md-12 col-xs-12 col-s-12">
                         <div className="bodyLeft">
                             <div className='leftImage'>
-                                <img src="" alt="" />
+                                <img src={data.blogImage} alt="" />
                             </div>
                             <article>
-                                <p></p>
+                                <p>{data.information}</p>
                             </article>
                         </div>
                         <BlogComment />
@@ -32,37 +33,37 @@ const BlogBodyDetails = () => {
                             <div className="content">
                                 <h3>RECENT POSTS</h3>
                                 <ul>
-                                    <li><Link>Realism And Impressionism</Link></li>
-                                    <li><Link>The Dancers</Link></li>
-                                    <li><Link>In The Loge</Link></li>
-                                    <li><Link>How To Select Portrait Artists</Link></li>
-                                    <li><Link>Both Members Of This Club</Link></li>
+                                    <li><Link to="/blog">Realism And Impressionism</Link></li>
+                                    <li><Link to="/blog">The Dancers</Link></li>
+                                    <li><Link to="/blog">In The Loge</Link></li>
+                                    <li><Link to="/blog">How To Select Portrait Artists</Link></li>
+                                    <li><Link to="/blog">Both Members Of This Club</Link></li>
                                 </ul>
                             </div>
                             <div className="content">
                                 <h3>Archives</h3>
                                 <ul>
-                                    <li> <Link>November 2019</Link></li>
-                                    <li><Link>October 2019</Link></li>
+                                    <li> <Link to="/blog">November 2019</Link></li>
+                                    <li><Link to="/blog">October 2019</Link></li>
                                 </ul>
                             </div>
                             <div className="content">
                                 <h3>Catagories</h3>
                                 <ul>
-                                    <li> <Link>Drawings</Link></li>
-                                    <li> <Link>HeaderLeft2</Link></li>
-                                    <li> <Link>Home1</Link></li>
-                                    <li> <Link>Paintings</Link></li>
-                                    <li> <Link>Sculptures</Link></li>
-                                    <li> <Link>This Month</Link></li>
-                                    <li> <Link>This Week</Link></li>
-                                    <li> <Link>Today</Link></li>
+                                    <li> <Link to="/blog">Drawings</Link></li>
+                                    <li> <Link to="/blog">HeaderLeft2</Link></li>
+                                    <li> <Link to="/blog">Home1</Link></li>
+                                    <li> <Link to="/blog">Paintings</Link></li>
+                                    <li> <Link to="/blog">Sculptures</Link></li>
+                                    <li> <Link to="/blog">This Month</Link></li>
+                                    <li> <Link to="/blog">This Week</Link></li>
+                                    <li> <Link to="/blog">Today</Link></li>
                                 </ul>
                             </div>
                             <div className="content">
                                 <h3>META</h3>
                                 <ul>
-                                    <li><Link>Log in</Link></li>
+                                    <li><Link to="/myaccount">Log in</Link></li>
                                     <li><Link>Entries feed</Link></li>
                                     <li><Link>Comments feed</Link></li>
                                     <li><Link>WordPress.org</Link></li>

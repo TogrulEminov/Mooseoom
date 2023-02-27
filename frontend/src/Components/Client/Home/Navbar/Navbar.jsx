@@ -1,6 +1,4 @@
 import React from 'react'
-import "./_Navbar.scss"
-
 import NavbarHead from './NavbarHead/NavbarHead'
 import NavbarBottom from './NavbarBottom/NavbarBottom'
 const Navbar = () => {

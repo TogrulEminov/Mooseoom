@@ -3,23 +3,24 @@ import { AiFillStar, AiOutlineStar } from 'react-icons/ai'
 import { Link } from 'react-router-dom'
 import { mainContext } from '../../../../Context/Context'
 
-const filledStar = [
-    "filled",
-    "filled",
-    "filled",
-    "filled",
-    "filled",
-]
-const outlineStar = [
-    "outlined",
-    "outlined",
-    "outlined",
-    "outlined",
-    "outlined",
-]
 
 
 const ShopCard = ({ e }) => {
+    const filledStar = [
+        "filled",
+        "filled",
+        "filled",
+        "filled",
+        "filled",
+    ]
+    const outlineStar = [
+        "outlined",
+        "outlined",
+        "outlined",
+        "outlined",
+        "outlined",
+    ]
+    
     const { handleClick } = useContext(mainContext)
     const [star, setStar] = useState([]);
 

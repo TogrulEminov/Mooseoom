@@ -37,7 +37,7 @@ const UpComingSection = () => {
               .map((e) => (
                 <SwiperSlide key={e._id}>
                   <div className="card">
-                    <Link className="cardImage">
+                    <Link to={`/blog/${e._id}`} className="cardImage">
                       <img src={e?.blogImage} alt="" />
                     </Link>
                     <article>

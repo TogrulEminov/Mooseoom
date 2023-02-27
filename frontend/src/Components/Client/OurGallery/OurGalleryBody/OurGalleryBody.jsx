@@ -15,7 +15,7 @@ const OurGalleryBody = () => {
                         <div className="imageHover">
                             <div>
                                 <h3>{item.title}</h3>
-                                <h3><Link to="">{item.name}</Link></h3>
+                                <h3><Link to={`${item._id}`}>{item.name}</Link></h3>
                             </div>
                         </div>
                     </div>

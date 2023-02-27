@@ -1,31 +1,85 @@
-import React from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import "./_ShopHeadDetails.scss"
-import { Link } from "react-router-dom"
-import { AiOutlinePlus, AiOutlineMinus } from "react-icons/ai"
+import { Link, useParams } from "react-router-dom"
+import { AiOutlinePlus, AiOutlineMinus, AiFillStar, AiOutlineStar } from "react-icons/ai"
+import { mainContext } from '../../../../Context/Context'
+import axios from 'axios'
+
 const ShopHeadDetails = () => {
+    const filledStar = [
+        "filled",
+        "filled",
+        "filled",
+        "filled",
+        "filled",
+    ]
+    const outlineStar = [
+        "outlined",
+        "outlined",
+        "outlined",
+        "outlined",
+        "outlined",
+    ]
+    const { handleClick } = useContext(mainContext)
+    const [star, setStar] = useState([]);
+
+    const { id } = useParams()
+    const [data, setData] = useState([])
+
+    //! get data
+    const getData = async () => {
+        const res = await axios.get('http://localhost:5555/posters/' + id)
+        setData(res.data);
+    };
+
+    useEffect(() => {
+        getData()
+        window.scrollTo({
+            top: 0,
+            left: 0,
+            behavior: "smooth"
+        });
+    }, [])
+    const generateRating = (rating) => {
+        if (rating === 0)
+            return setStar(outlineStar)
+
+        setStar([
+            ...filledStar.slice(0, rating),
+            ...outlineStar.slice(0, 5 - rating),
+        ]);
+    };
+
+    useEffect(() => {
+        generateRating(data.rate)
+    }, [data])
 
     return (
         <div className='shopHeadDetails'>
             <div className="container">
                 <div className="row">
                     <div className="col-6 detailsImage">
-                       <button> <img src="https://mooseoom.foxthemes.me/wp-content/uploads/2020/01/poster_2_up.jpg" alt="" /></button>
-                        <span>Sale</span>
+                        <button> <img src={data.imagePath} alt="" /></button>
+                        {data.sale ? <span>Sale</span> : <></>}
                     </div>
                     <div className="col-6 detailsContent">
                         <article>
-                            <h2>Flying Ninja</h2>
+                            <h2>{data.name}</h2>
                             <ul>
-                                <li></li>
-                                <li></li>
-                                <li></li>
-                                <li></li>
-                                <li></li>
+                                {
+                                    star?.map((item, i) => (
+                                        <li key={i}>{item === "filled" ? <AiFillStar /> : <AiOutlineStar />}</li>
+                                    ))
+                                }
                             </ul>
-                            <div className='percentPrice'>
-                                <del>£15.00</del>
-                                <span>£12.00</span>
-                            </div>
+                            {data.sale ?
+                                <div className="percentPrice">
+                                    <del>£{data.price}</del>
+                                    <span>£{data.price - parseInt((data.price * data.percantagePrice) / 100)}.00</span>
+                                </div> : <div className="articleContent">
+                                    <span>£{data.price}</span>
+                                </div>
+                            }
                             <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
                             <div className='countProduct'>
                                 <button className='plusMinus'>
@@ -35,13 +89,12 @@ const ShopHeadDetails = () => {
                                 <button className='plusMinus'>
                                     <AiOutlineMinus />
                                 </button>
-                                <button className='addBtn'>Add to Cart</button>
+                                <button onClick={() => handleClick(data)} className='addBtn'>Add to Cart</button>
                             </div>
 
                             <div className="catagory">
                                 <span>Catagory:</span>
-                                <Link>Posters</Link>
-                                <Link>Posters</Link>
+                                <Link>{data.catagory}</Link>
                             </div>
                         </article>
                     </div>

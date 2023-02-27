@@ -24,7 +24,7 @@ const BlogCard = () => {
                                             </ul>
                                         </div>
                                         <div className="cardInformation">
-                                            <h3><Link to="">
+                                            <h3><Link to={`${blog._id}`}>
                                                 {blog.title}
                                             </Link></h3>
                                             <p>{blog.information}</p>

@@ -2,6 +2,8 @@ import React, { useContext, useState } from 'react'
 import "./_CollectionCard.scss"
 import { Link } from "react-router-dom"
 import { mainContext } from '../../../../Context/Context'
+import {motion,AnimatePresence} from "framer-motion"
+
 const CollectionCard = () => {
     const { blog, blogItems, filterArtItems, setBlogItems } = useContext(mainContext)
 
@@ -25,13 +27,14 @@ const CollectionCard = () => {
                 </div>
                 <div className="row">
                     {blogItems && blogItems
-                        // .filter((item) => item.catagories === "Drawings" || item.catagories === "Sculptures" || item.catagories === "Paintings")
                         .slice(0, visible)
-                        .map((blog) => (
-                            <div className="col-4  col-lg-4 col-md-6 col-s-12 col-xs-12 collectionAll" key={blog._id}>
+                        .map((blog,e) => (
+                            <motion.div key={e} animate={{opacity:1, scale:1}} initial={{opacity:1, scale:0}} exit={{opacity:0,scale:0}}  layout className="col-4  col-lg-4 col-md-6 col-s-12 col-xs-12 collectionAll" >
+                            <AnimatePresence>
                                 <img src={blog.blogImage} alt="" />
                                 <h3><Link to="">{blog.title}</Link></h3>
-                            </div>
+                                </AnimatePresence>
+                            </motion.div>
                         ))}
                 </div>
             </div>

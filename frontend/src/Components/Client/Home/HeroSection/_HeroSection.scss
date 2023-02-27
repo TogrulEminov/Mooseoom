@@ -9,20 +9,21 @@
 
     .swp-1 {
         background: url("../../../../media/swp-1.jpg") center/cover;
-       min-height: 480px;
+        min-height: 480px;
         display: flex;
         align-items: center;
         justify-content: center;
         text-align: center;
         position: relative;
-        &::before{
+
+        &::before {
             content: "";
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0,0,0,0.66)
+            background: rgba(0, 0, 0, 0.66)
         }
 
         .row {
@@ -31,7 +32,7 @@
             align-items: center;
 
             .swiperContent {
-        padding: 20px 0;
+                padding: 20px 0;
                 position: relative;
                 display: flex;
                 align-items: center;
@@ -64,51 +65,58 @@
             }
         }
     }
-    .swiper-button-prev{
+
+    .swiper-button-prev {
         color: #fff;
         position: absolute;
-        &:before{
-        position: relative;
+
+        &:before {
+            position: relative;
             content: "Prev";
             left: 80px;
             font-size: 18px;
-            
+
         }
     }
-    .swiper-button-next{
+
+    .swiper-button-next {
         color: #fff;
         position: absolute;
         right: 30px;
-        &::before{
-            content:"Next";
+
+        &::before {
+            content: "Next";
             position: relative;
             right: 20px;
             font-size: 18px;
         }
     }
 }
+
 @media only screen and (max-width:1200px) {
-    .swiperSlider {   
+    .swiperSlider {
         .swp-1 {
-        
+
             .row {
                 .swiperContent {
-         
+
                     h1 {
                         font-size: 30px;
                         line-height: 50px;
                     }
-    
+
                 }
             }
         }
     }
 
 }
+
 @media only screen and (max-width:992px) {
-    .swiperSlider {   
+    .swiperSlider {
         .swp-1 {
             min-height: 380px;
+
             .row {
                 .swiperContent {
 
@@ -116,24 +124,27 @@
                         font-size: 30px;
                         line-height: 50px;
                     }
-    
+
                 }
 
             }
         }
-        .swiper-button-prev{
-          top: 80px;
+
+        .swiper-button-prev {
+            top: 80px;
         }
-        .swiper-button-next{
+
+        .swiper-button-next {
             position: absolute;
             top: 80px;
-            
+
         }
     }
 
 }
+
 @media only screen and (max-width:768px) {
-    .swiperSlider {   
+    .swiperSlider {
         .swp-1 {
             .row {
                 .swiperContent {
@@ -144,17 +155,20 @@
                 }
             }
         }
-        .swiper-button-prev{
-          top: 50px;
+
+        .swiper-button-prev {
+            top: 50px;
         }
-        .swiper-button-next{
+
+        .swiper-button-next {
             position: absolute;
-            top: 50px;   
+            top: 50px;
         }
     }
 }
+
 @media only screen and (max-width:576px) {
-    .swiperSlider {   
+    .swiperSlider {
         .swp-1 {
             .row {
                 .swiperContent {
@@ -165,11 +179,13 @@
                 }
             }
         }
-        .swiper-button-prev{
-          display: none;
+
+        .swiper-button-prev {
+            display: none;
         }
-        .swiper-button-next{
-           display: none; 
+
+        .swiper-button-next {
+            display: none;
         }
     }
 }

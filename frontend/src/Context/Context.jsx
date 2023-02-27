@@ -2,31 +2,32 @@ import { createContext, useEffect, useState } from "react";
 import axios from "axios"
 
 export const mainContext = createContext(null)
-const initialState = {
-  name: "",
-  workers: "",
-  information: "",
-  title: "",
-}
-const initialShopState = {
-  name: "",
-  rate: "",
-  description: "",
-  price: "",
-  percantagePrice: "",
-  sale: false,
-  catagory: ""
-}
-const initialBlogState = {
-  title: "",
-  date: "",
-  information: "",
-  publisher: "",
-  publisherUrl: "",
-  archives: "",
-  catagories: ""
-}
+
 function Context({ children }) {
+  const initialState = {
+    name: "",
+    workers: "",
+    information: "",
+    title: "",
+  }
+  const initialShopState = {
+    name: "",
+    rate: "",
+    description: "",
+    price: "",
+    percantagePrice: "",
+    sale: false,
+    catagory: ""
+  }
+  const initialBlogState = {
+    title: "",
+    date: "",
+    information: "",
+    publisher: "",
+    publisherUrl: "",
+    archives: "",
+    catagories: ""
+  }
   const [open, setOpen] = useState(false)
   const [faq, setFaq] = useState(false)
   // ! fetch data
@@ -177,6 +178,7 @@ function Context({ children }) {
   const getBlogData = async () => {
     const response = await axios.get(`${url}/blog`)
     setBlog(response.data);
+    setBlogItems(response.data)
   };
   const handleBlogChange = (e) => {
     const { value, name } = e.target
@@ -319,7 +321,8 @@ function Context({ children }) {
     postBlogData, 
     handleBlogChange,
     setBlogFile,
-    blogForm
+    blogForm,
+    setData,
   }
   return (
     <mainContext.Provider value={Values}>
