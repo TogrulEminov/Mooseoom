@@ -105,8 +105,12 @@ export const ROUTES = [
                 element: <BlogAdmin />
             },
             {
-                path: "shop",
+                path: "",
                 element: <ShopAdmin />
+            },
+            {
+                path: "*",
+                element: <NotFound />
             },
         ]
     }

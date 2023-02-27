@@ -1,12 +1,16 @@
 import React, { useContext } from 'react'
-import { Link } from "react-router-dom"
+import { NavLink } from "react-router-dom"
 import Logo from '../../Client/Logo/Logo'
 import { RxHamburgerMenu } from "react-icons/rx"
 import { AiOutlineClose } from "react-icons/ai"
 import "./_Navbar.scss"
 import { mainContext } from '../../../Context/Context'
 const Navbar = () => {
-    const {clickHamburger,open} =useContext(mainContext)
+    let activeStyle = {
+        color: "red"
+    };
+
+    const { clickHamburger, open } = useContext(mainContext)
     return (
         <div className='navbarAdmin'>
             <div className="container">
@@ -17,21 +21,27 @@ const Navbar = () => {
                         </button>
                     </div>
                     <div className="logo">
-                        <Link to="/"> <Logo /></Link>
+                        <NavLink to="/"> <Logo /></NavLink>
                     </div>
                     <div className="navbarLinks">
                         <ul>
                             <li>
-                                <Link to="/admin/shop">Shop</Link>
+                                <NavLink to="/admin/" style={({ isActive }) =>
+                                    isActive ? activeStyle : undefined
+                                }>Shop</NavLink>
                             </li>
                             <li>
-                                <Link to='/admin/art'>Art</Link>
+                                <NavLink to='/admin/art' style={({ isActive }) =>
+                                    isActive ? activeStyle : undefined
+                                }>Art</NavLink>
                             </li>
                             <li>
-                                <Link to="/admin/blog">Blog</Link>
+                                <NavLink to="/admin/blog" style={({ isActive }) =>
+                                    isActive ? activeStyle : undefined
+                                }>Blog</NavLink>
                             </li>
                             <li>
-                                <Link to="/">Go to Home</Link>
+                                <NavLink to="/">Go to Home</NavLink>
                             </li>
                         </ul>
                     </div>
@@ -46,16 +56,22 @@ const Navbar = () => {
                         <div className="sidebarLinks">
                             <ul>
                                 <li>
-                                    <Link to="/admin/shop">Shop</Link>
+                                    <NavLink style={({ isActive }) =>
+                                        isActive ? activeStyle : undefined
+                                    } to="/admin/">Shop</NavLink>
                                 </li>
                                 <li>
-                                    <Link to='/admin/art'>Art</Link>
+                                    <NavLink style={({ isActive }) =>
+                                        isActive ? activeStyle : undefined
+                                    } to='/admin/art'>Art</NavLink>
                                 </li>
                                 <li>
-                                    <Link to="/admin/blog">Blog</Link>
+                                    <NavLink style={({ isActive }) =>
+                                        isActive ? activeStyle : undefined
+                                    } to="/admin/blog">Blog</NavLink>
                                 </li>
                                 <li>
-                                    <Link to="/">Go to Home</Link>
+                                    <NavLink to="/">Go to Home</NavLink>
                                 </li>
                             </ul>
                         </div>

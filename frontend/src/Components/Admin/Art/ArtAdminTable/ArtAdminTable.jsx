@@ -28,7 +28,13 @@ const ArtAdminTable = () => {
                         <th>Delete</th>
                     </thead>
                     <tbody>
-                        {artData && artData.map((e) => (
+                        {artData && artData
+                         .filter((item) => {
+                            return search.trim().toUpperCase()===""
+                              ? item
+                              : item.name.toLowerCase().includes(search.toLowerCase());
+                          })
+                        .map((e) => (
                             <tr key={e._id}>
                                 <td data-aria-label='name'>{e.name}</td>
                                 <td data-aria-label='information'><span>{e.information}</span></td>

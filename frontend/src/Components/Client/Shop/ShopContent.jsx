@@ -1,7 +1,5 @@
 import React, { useContext, useEffect } from 'react'
-import { AiFillStar } from "react-icons/ai"
 import { mainContext } from '../../../Context/Context'
-import { Link } from "react-router-dom"
 import "./_Shop.scss"
 import Pagination from './Pagination/Pagination'
 import ShopCard from './ShopCard/ShopCard'

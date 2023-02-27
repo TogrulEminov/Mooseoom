@@ -5,7 +5,7 @@ const Pagination = () => {
     const { shopButton, setShopButton } = useContext(mainContext)
    
     // ?page
-    const pages = 2;
+    const pages = 4;
     const numOfPages = [];
     for (let i = 1; i <= pages; i++) {
         numOfPages.push(i)

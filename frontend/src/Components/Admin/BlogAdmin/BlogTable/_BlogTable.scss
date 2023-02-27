@@ -1,4 +1,4 @@
-.shopTable {
+.blogTable {
     padding: 40px 0;
 
     .row {
@@ -86,8 +86,8 @@
     }
 }
 
-@media only screen and (max-width:768px) {
-    .shopTable {
+@media only screen and (max-width:1200px) {
+    .blogTable {
         padding: 40px 0;
         .row {
             justify-content: center;
