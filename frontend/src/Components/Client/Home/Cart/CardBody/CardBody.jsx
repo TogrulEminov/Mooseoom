@@ -12,75 +12,7 @@ const CardBody = () => {
         <div className='allCardBasket'>
             <div className="container">
             {cardItems.length > 0 && (
-                // <div className="Table">
-                //     <div className="container">
-                //         <div className="tableHead">
-                //             <div className="row">
-                //                 <div className='col-2 content'>
-                //                     Delete
-                //                 </div>
-                //                 <div className='col-2 content'>
-                //                     Image
-                //                 </div>
-                //                 <div className='col-2 content'>
-                //                     Products
-                //                 </div>
-                //                 <div className='col-2 content'>
-                //                     Price
-                //                 </div>
-                //                 <div className='col-2 content'>
-                //                     Quantity
-                //                 </div>
-                //                 <div className='col-2 content'>
-                //                     Subtotal
-                //                 </div>
 
-                //             </div>
-                //         </div>
-                //         {cardItems.map((product) => (
-                //             <div className="tableBody" key={product._id}>
-                //                 <div className="row">
-                //                     <div className="col-2 content">
-                //                         <button onClick={() => emptyBasket()}><AiOutlineDelete /></button>
-                //                     </div>
-                //                     <div className="col-2 content">
-                //                         <Link>
-                //                             <img src={product?.imagePath} alt={product.name} /></Link>
-                //                     </div>
-                //                     <div className="col-2 content">
-                //                         <Link>  <span>
-                //                             {product.name}
-                //                         </span></Link>
-                //                     </div>
-                //                     {product.sale ?
-                //                         <div className="col-2 content">
-                //                             <span>£{product.price - parseInt((product.price * product.percantagePrice) / 100)}.00</span>
-                //                         </div> : <div className="col-2 content">
-                //                             <span>£{product.price}</span>
-                //                         </div>
-                //                     }
-                //                     <div className="col-2 content">
-                //                         <div className="quantity">
-                //                             <button className='plus'>
-                //                                 <AiOutlinePlus />
-                //                             </button>
-                //                             <span></span>
-                //                             <button className='minus'>
-                //                                 <AiOutlineMinus />
-                //                             </button>
-                //                         </div>
-                //                     </div>
-                //                     <div className="col-2 content">
-                //                         <h5>Total</h5>
-                //                     </div>
-                //                 </div>
-                //             </div>
-                //         ))}
-                //         <div className="uptadeTotal">
-                //             <button >Uptade</button>
-                //         </div>
-                //     </div>
-                // </div>
                 <table>
                     <thead>
                         <th>Delete</th>
