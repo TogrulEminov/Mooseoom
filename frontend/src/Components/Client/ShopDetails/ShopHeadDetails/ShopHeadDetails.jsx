@@ -1,11 +1,10 @@
 import React, { useContext, useEffect, useState } from 'react'
 import "./_ShopHeadDetails.scss"
-import { Link, useParams } from "react-router-dom"
+import { Link } from "react-router-dom"
 import { AiOutlinePlus, AiOutlineMinus, AiFillStar, AiOutlineStar } from "react-icons/ai"
 import { mainContext } from '../../../../Context/Context'
-import axios from 'axios'
 
-const ShopHeadDetails = () => {
+const ShopHeadDetails = ({data}) => {
     const filledStar = [
         "filled",
         "filled",
@@ -23,17 +22,8 @@ const ShopHeadDetails = () => {
     const { handleClick } = useContext(mainContext)
     const [star, setStar] = useState([]);
 
-    const { id } = useParams()
-    const [data, setData] = useState([])
-
-    //! get data
-    const getData = async () => {
-        const res = await axios.get('http://localhost:5555/posters/' + id)
-        setData(res.data);
-    };
-
+   
     useEffect(() => {
-        getData()
         window.scrollTo({
             top: 0,
             left: 0,

@@ -31,13 +31,10 @@
     }
 
     .upComingBody {
-        .swiper-pagination-bullet {
-            width: 15px !important;
-            height: 15px !important;
-        }
+       
         .card {
-            width: 280px;
-            border: 1px solid #ddd;
+            margin: 0 10px;
+           width: 250px;
             .cardImage {
                 width: 100%;
                 img {

@@ -1,108 +1,99 @@
 .allCardBasket {
-  .Table {
+  padding: 40px 0;
+
+  table {
     margin: 20px 0;
+    width: 100%;
+    border-collapse: collapse;
 
-    .tableHead {
-      .row {
-        .content {
-          font-family: 'Crimson Text', serif;
-          font-size: 18px;
-          font-weight: bold;
-          padding: 6px 0;
+    th {
+      background-color: black;
+      color: #fff;
+      padding: 12px 15px;
+      border: 1px solid #111;
+    }
+
+    td {
+      padding: 10px 15px;
+      border: 1px solid #ddd;
+    }
+
+    tbody {
+      tr {
+        &:nth-child(even) {
+          background-color: #868484;
+        }
+        td {
           text-align: center;
-          border: 1px solid #ddd;
-        }
-      }
-    }
-
-    .tableBody {
-      .content {
-        text-align: center;
-        height: 50px;
-        display: flex;
-        padding: 8px 0;
-        align-items: center;
-        justify-content: center;
-        border: 1px solid #ddd;
-
-        button {
-          font-size: 20px;
-          color: red;
-          background-color: transparent;
-          border: none;
-          cursor: pointer;
-        }
-
-        a {
-          width: 100%;
-          height: 34px;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-
-          img {
-            width: 100%;
-            height: 34px;
-            object-fit: contain;
-          }
-
-          span {
-            color: #000;
-            font-family: 'Roboto Mono', monospace;
-            font-size: 16px;
-            text-transform: capitalize;
-          }
-        }
-
-        span {
-          font-family: 'Roboto Mono', monospace;
-          font-size: 16px;
-          text-transform: capitalize;
-        }
-
-        h5 {
-          font-size: 20px;
-        }
-
-        .quantity {
-          display: flex;
-          align-items: center;
-
-          .plus {
-            font-size: 18px;
-            color: green;
-          }
-          span{
-            font-size: 18px;
-            padding: 0 4px;
-          }
-          .minus {
+          button {
+            font-size: 20px;
             color: red;
-            font-size: 18px;
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+          }
+          .quantity {
+            display: flex;
+            justify-content: center;
+            justify-content: center;
+
+            .plus {
+              font-size: 18px;
+              border: none;
+              background-color: transparent;
+              cursor: pointer;
+
+              svg {
+                color: green;
+              }
+            }
+           
+            span {
+              padding: 0 8px;
+              display: block;
+              font-size: 18px;
+              color: #000;
+            }
+
+            .minus {
+
+              svg {
+                color: red;
+              }
+
+              border: none;
+              background-color: transparent;
+              cursor: pointer;
+            }
+          }
+
+          h5 {
+            font-size: 16px;
+          }
+
+          a {
+            height: 34px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            img {
+              width: 34px;
+              height: 34px;
+              object-fit: contain;
+            }
+
+            span {
+              color: #000;
+              font-family: 'Roboto Mono', monospace;
+              font-size: 16px;
+              text-transform: capitalize;
+            }
           }
         }
       }
-
     }
   }
-  .uptadeTotal {
-    border: 1px solid #ddd;
-    text-align: end;
-    padding: 3px 30px;
 
-    button {
-      font-size: 20px;
-      font-family: 'Crimson Text', serif;
-      color: gray;
-      background-color: transparent;
-      cursor: pointer;
-      text-transform: uppercase;
-      padding: 10px 30px;
-      border: none;
-
-    }
-
-  }
   .emptyCardBasket {
     margin: 20px 0;
 
@@ -141,6 +132,80 @@
 
         &:hover {
           color: red;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .allCardBasket {
+    padding: 40px 0;
+
+    table {
+      thead {
+        display: none;
+      }
+
+      tbody {
+        display: block;
+        width: 100%;
+
+        tr {
+          td {
+            .quantity {
+              justify-content: end;
+            }
+            a {
+              display: flex;
+              justify-content: end;
+            }
+          }
+        }
+      }
+
+      tr {
+        display: block;
+        width: 100%;
+        margin-bottom: 15px;
+      }
+
+      td {
+        text-align: right !important;
+        padding-left: 50%;
+        display: block;
+        width: 100%;
+        position: relative;
+
+        &:before {
+          content: attr(data-aria-label);
+          position: absolute;
+          left: 0;
+          width: 50%;
+          padding-left: 15px;
+          font-size: 15px;
+          font-weight: bold;
+          text-align: left;
+        }
+
+        .quantity {
+          justify-content: end;
+        }
+
+      }
+    }
+    .emptyCardBasket {
+      margin: 20px 0;
+  
+      .emptyBasketContent {
+        p {
+          span {
+            font-size: 24px;
+          }
+        }
+  
+        a {
+          padding: 20px ;
         }
       }
     }

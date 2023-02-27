@@ -1,17 +1,17 @@
 import React, { useContext } from 'react'
 import "./_UpComingSection.scss"
 import { Link } from "react-router-dom"
-// Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
-
 // Import Swiper styles
 import "swiper/css";
-import { Pagination } from "swiper";
+import "swiper/css/pagination";
+// import required modules
+import "swiper/css/navigation";
 import { mainContext } from '../../../../Context/Context';
 
 const UpComingSection = () => {
   const { blog } = useContext(mainContext)
-  
+
   return (
     <div className='upComingSection'>
       <div className="container">
@@ -26,26 +26,21 @@ const UpComingSection = () => {
         </div>
         <div className="upComingBody">
           <Swiper
-            slidesPerView={4}
-            spaceBetween={30}
-
-            modules={[Pagination]}
+            slidesPerView={"auto"}
             className="mySwiper"
           >
             {blog && blog
               .filter(item => item.catagories === "Home1")
               .map((e) => (
-                <SwiperSlide key={e._id}>
-                  <div className="card">
-                    <Link to={`/blog/${e._id}`} className="cardImage">
-                      <img src={e?.blogImage} alt="" />
-                    </Link>
-                    <article>
-                      <h5>{e.date}</h5>
-                      <h2>{e.title}</h2>
-                      <p>{e.information}</p>
-                    </article>
-                  </div>
+                <SwiperSlide key={e._id} className="card">
+                  <Link to={`/blog/${e._id}`} className="cardImage">
+                    <img src={e?.blogImage} alt="" />
+                  </Link>
+                  <article>
+                    <h5>{e.date}</h5>
+                    <h2>{e.title}</h2>
+                    <p>{e.information}</p>
+                  </article>
                 </SwiperSlide>
               ))}
           </Swiper>

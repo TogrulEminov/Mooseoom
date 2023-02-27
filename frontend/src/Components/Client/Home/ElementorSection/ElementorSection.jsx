@@ -5,11 +5,11 @@ import block1 from "../../../../media/block1.jpg"
 import block2 from "../../../../media/block2.jpg"
 const ElementorSection = () => {
     return (
-        <div className='elementorSection'>
+        <div className='elementorSection'  >
             <div className="container">
                 <div className="elementorHead">
                 <div className="row">
-                    <div className="col-8 col-lg-8  col-md-11 col-xs-12 col-s-12 elementorTitle">
+                    <div  className="col-8 col-lg-8  col-md-11 col-xs-12 col-s-12 elementorTitle" >
                         <h1>The MooM with it’s unique collection is among those museums that attracts a wide array of people and is among the rare that have residencies.</h1>
                     </div>
                     </div>

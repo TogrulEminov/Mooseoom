@@ -28,8 +28,8 @@ const Home = () => {
         <title>Home</title>
       </Helmet>
       {" "}
-      <HeroSection />
-      <ElementorSection />
+      <HeroSection  />
+      <ElementorSection  />
       <UpComingSection />
       <Curators />
       <TrendingSection />
