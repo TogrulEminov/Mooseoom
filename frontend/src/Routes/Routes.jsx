@@ -2,6 +2,8 @@ import Cart from "../Components/Client/Home/Cart/Cart";
 import AdminRoot from "../Pages/Admin/AdminRoot";
 import Art from "../Pages/Admin/Art/Art";
 import BlogAdmin from "../Pages/Admin/Blog/BlogAdmin";
+import LoginAdmin from "../Pages/Admin/Login/LoginAdmin";
+import Register from "../Pages/Admin/Register/Register";
 import ShopAdmin from "../Pages/Admin/Shop/ShopAdmin";
 import Blog from "../Pages/Client/Blog/Blog";
 import BlogDetails from "../Pages/Client/BlogDetails/BlogDetails";
@@ -101,8 +103,16 @@ export const ROUTES = [
                 element: <Art />
             },
             {
-                path:"blog",
+                path: "blog",
                 element: <BlogAdmin />
+            },
+            {
+                path: "register",
+                element: <Register />
+            },
+            {
+                path: "login",
+                element: <LoginAdmin />
             },
             {
                 path: "",
