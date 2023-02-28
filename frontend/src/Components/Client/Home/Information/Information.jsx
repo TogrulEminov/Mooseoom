@@ -14,7 +14,7 @@ const Information = () => {
         AOS.init({ duration: 2000 });
     }, [])
     return (
-        <div data-aos="zoom-in-up" className='informationSection'>
+        <div data-aos="fade-up" className='informationSection'>
             <div className="container">
                 <Swiper
                     slidesPerView={"auto"}

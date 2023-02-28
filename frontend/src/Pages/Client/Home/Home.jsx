@@ -27,7 +27,6 @@ const Home = () => {
       <Helmet>
         <title>Home</title>
       </Helmet>
-      {" "}
       <HeroSection  />
       <ElementorSection  />
       <UpComingSection />

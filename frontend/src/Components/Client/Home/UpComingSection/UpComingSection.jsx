@@ -27,7 +27,7 @@ const UpComingSection = () => {
             </div>
           </div>
         </div>
-        <div data-aos="flip-up" className="upComingBody">
+        <div data-aos="fade-up" className="upComingBody">
           <Swiper
             slidesPerView={"auto"}
             className="mySwiper"

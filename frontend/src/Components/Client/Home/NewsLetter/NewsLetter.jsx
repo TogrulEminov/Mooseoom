@@ -8,7 +8,7 @@ const Newsletter = () => {
         AOS.init({ duration: 2000 });
     }, [])
     return (
-        <div data-aos="zoom-in" className='newsLetterSection'>
+        <div data-aos="fade-up" className='newsLetterSection'>
             <div className="container">
                 <div className="newsLetterBackground">
                     <div className="row">
