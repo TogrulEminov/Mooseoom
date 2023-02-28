@@ -5,6 +5,8 @@ const mongoose = require("mongoose");
 var morgan = require('morgan')
 const postRoute = require("./Routes/posters")
 const blogRoute = require("./Routes/Blog");
+const authRouter=require('./Routes/Auth')
+
 const artRoute = require("./Routes/Art");
 const messageRoute = require("./Routes/Message");
 const dotenv = require("dotenv");
@@ -31,6 +33,8 @@ app.use('/blog', blogRoute)
 app.use('/art', artRoute)
 //! message
 app.use('/message', messageRoute)
+// ! user
+app.use("/auth",authRouter)
 
 
 //Routes
