@@ -12,7 +12,6 @@ const CardBody = () => {
         <div className='allCardBasket'>
             <div className="container">
             {cardItems.length > 0 && (
-
                 <table>
                     <thead>
                         <th>Delete</th>

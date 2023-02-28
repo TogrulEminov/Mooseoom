@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import "./_Information.scss"
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -7,10 +7,14 @@ import card1 from "../../../../media/member-2-150x150-1.jpg"
 import card2 from "../../../../media/member-5-150x150-1.jpg"
 import card3 from "../../../../media/testimonaial-image_1.png"
 import card4 from "../../../../media/testimonaial-image_2.png"
-
+import AOS from 'aos';
+import 'aos/dist/aos.css'; 
 const Information = () => {
+    useEffect(() => {
+        AOS.init({ duration: 2000 });
+    }, [])
     return (
-        <div className='informationSection'>
+        <div data-aos="zoom-in-up" className='informationSection'>
             <div className="container">
                 <Swiper
                     slidesPerView={"auto"}

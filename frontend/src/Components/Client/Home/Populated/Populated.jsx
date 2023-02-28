@@ -1,10 +1,15 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import populated from "../../../../media/jenny-saville.jpg"
 import { Link } from "react-router-dom"
 import "./_Populated.scss"
+import AOS from 'aos';
+import 'aos/dist/aos.css'; 
 const Populated = () => {
+    useEffect(() => {
+        AOS.init({ duration: 2000 });
+    }, [])
     return (
-        <div className='populatedSection'>
+        <div data-aos="zoom-out-up" className='populatedSection'>
             <div className="container">
                 <div className="row">
                     <div className="col-6 col-lg-6 col-md-6 col-xs-12 col-s-12 populatedLeft">

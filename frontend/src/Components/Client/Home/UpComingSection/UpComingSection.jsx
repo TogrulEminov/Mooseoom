@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext,useEffect} from 'react'
 import "./_UpComingSection.scss"
 import { Link } from "react-router-dom"
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -8,10 +8,13 @@ import "swiper/css/pagination";
 // import required modules
 import "swiper/css/navigation";
 import { mainContext } from '../../../../Context/Context';
-
+import AOS from 'aos';
+import 'aos/dist/aos.css'; 
 const UpComingSection = () => {
   const { blog } = useContext(mainContext)
-
+  useEffect(()=>{
+    AOS.init({duration:2000});
+},[])
   return (
     <div className='upComingSection'>
       <div className="container">
@@ -24,7 +27,7 @@ const UpComingSection = () => {
             </div>
           </div>
         </div>
-        <div className="upComingBody">
+        <div data-aos="flip-up" className="upComingBody">
           <Swiper
             slidesPerView={"auto"}
             className="mySwiper"

@@ -1,9 +1,14 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Link } from "react-router-dom"
 import "./_NewsLetter.scss"
+import AOS from 'aos';
+import 'aos/dist/aos.css'; 
 const Newsletter = () => {
+    useEffect(() => {
+        AOS.init({ duration: 2000 });
+    }, [])
     return (
-        <div className='newsLetterSection'>
+        <div data-aos="zoom-in" className='newsLetterSection'>
             <div className="container">
                 <div className="newsLetterBackground">
                     <div className="row">

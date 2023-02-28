@@ -1,11 +1,16 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import "./_ArtDesign.scss"
 import { Link } from "react-router-dom"
 import { mainContext } from '../../../../Context/Context'
+import AOS from 'aos';
+import 'aos/dist/aos.css'; 
 const ArtDesign = () => {
     const { artData } = useContext(mainContext)
+    useEffect(() => {
+        AOS.init({ duration: 2000 });
+    }, [])
     return (
-        <div className='artDesign'>
+        <div data-aos="fade-up" className='artDesign'>
             <div className="container">
                 <div className="row">
                     {artData && artData

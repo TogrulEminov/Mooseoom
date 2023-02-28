@@ -2,7 +2,13 @@ import "./_Curators.scss"
 import img1 from "../../../../media/team1.jpg"
 import img2 from "../../../../media/team2.jpg"
 import img3 from "../../../../media/team3.jpg"
+import { useEffect } from "react"
+import AOS from 'aos';
+import 'aos/dist/aos.css'; 
 const Curators = () => {
+    useEffect(() => {
+        AOS.init({ duration: 2000 });
+    }, [])
     return (
         <div className='curatorSection'>
             <div className="container">
@@ -17,7 +23,7 @@ const Curators = () => {
                 </div>
                 <div className="curatorsBody">
                     <div className="row">
-                        <div className="col-4 col-lg-4 col-md-4 col-xs-10 col-s-12 curatorsCard">
+                        <div data-aos="fade-up" className="col-4 col-lg-4 col-md-4 col-xs-10 col-s-12 curatorsCard">
                             <div className='curatorsImage'>
                                 <img src={img1} alt="" />
                             </div>
@@ -26,7 +32,7 @@ const Curators = () => {
                                 <h3>Louis Toadvine</h3>
                             </article>
                         </div>
-                        <div className="col-4 col-lg-4 col-md-4 col-xs-10 col-s-12 curatorsCard">
+                        <div data-aos="fade-up" className="col-4 col-lg-4 col-md-4 col-xs-10 col-s-12 curatorsCard">
                             <div className='curatorsImage'>
                                 <img src={img2} alt="" />
                             </div>
@@ -35,7 +41,7 @@ const Curators = () => {
                                 <h3>Oedipa Mass</h3>
                             </article>
                         </div>
-                        <div className="col-4 col-lg-4 col-md-4 col-xs-10 col-s-12 curatorsCard">
+                        <div data-aos="fade-up" className="col-4 col-lg-4 col-md-4 col-xs-10 col-s-12 curatorsCard">
                             <div className='curatorsImage'>
                                 <img src={img3} alt="" />
                             </div>

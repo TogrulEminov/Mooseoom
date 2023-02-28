@@ -1,10 +1,15 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Link } from "react-router-dom"
 import "./_ContuctHome1.scss"
 import { BsFacebook, BsInstagram, BsTwitter, BsDribbble } from "react-icons/bs"
+import AOS from 'aos';
+import 'aos/dist/aos.css'; 
 const ContuctHome1 = () => {
+    useEffect(() => {
+        AOS.init({ duration: 2000 });
+    }, [])
     return (
-        <div className='allContuctHome'>
+        <div data-aos="fade-up" className='allContuctHome'>
             <div className="container">
                 <div className="row">
                     <div className="col-6 col-lg-6 col-md-6 col-xs-12 col-s-12 contuctLeft">
