@@ -1,10 +1,15 @@
-import React, { useEffect } from 'react'
+import React, { useContext, useEffect } from 'react'
 import { Link } from "react-router-dom"
 import "./_ContuctHome1.scss"
 import { BsFacebook, BsInstagram, BsTwitter, BsDribbble } from "react-icons/bs"
 import AOS from 'aos';
-import 'aos/dist/aos.css'; 
+import 'aos/dist/aos.css';
+import { mainContext } from '../../../../Context/Context';
+
 const ContuctHome1 = () => {
+    const { postMessage, handleMessage, message } = useContext(mainContext)
+
+  
     useEffect(() => {
         AOS.init({ duration: 2000 });
     }, [])
@@ -49,18 +54,30 @@ const ContuctHome1 = () => {
                         </div>
                     </div>
                     <div className="col-6 col-lg-6 col-md-6 col-xs-12 col-s-12 contuctRight">
-                        <div className='contuctTextarea'>
-                            <textarea placeholder='Your message'></textarea>
-                        </div>
-                        <div className="contuctInput">
-                            <div className='inputYup'>
-                                <input type="text" placeholder='Your name' />
+                        <form onSubmit={postMessage}>
+                            <div className='contuctTextarea'>
+                                <textarea
+                                    name='message'
+                                    value={message.message}
+                                    onChange={handleMessage} placeholder='Your message'></textarea>
                             </div>
-                            <div className='inputYup'>
-                                <input type="email" placeholder='Your e-mail' />
+                            <div className="contuctInput">
+                                <div className='inputYup'>
+                                    <input
+                                        name='name'
+                                        value={message.name}
+                                        onChange={handleMessage} type="text" placeholder='Your name' />
+                                </div>
+                                <div className='inputYup'>
+                                    <input
+                                        name='email'
+                                        value={message.email}
+                                        onChange={handleMessage} type="email" placeholder='Your e-mail' />
+
+                                </div>
                             </div>
-                        </div>
-                        <button>Submit Message</button>
+                            <button>Submit Message</button>
+                        </form>
                     </div>
                 </div>
             </div>

@@ -1,6 +1,7 @@
 import React from 'react'
 import { Helmet } from 'react-helmet'
 import AllEvents from '../../../Components/Client/Events/AllEvents/AllEvents'
+import EventsHead from '../../../Components/Client/Events/EventsHead/EventsHead'
 import Feautured from '../../../Components/Client/Events/Feautured/Feautured'
 import ContuctHome1 from '../../../Components/Client/Home/ContuctHome1/ContuctHome1'
 import Newsletter from '../../../Components/Client/Home/NewsLetter/NewsLetter'
@@ -9,9 +10,10 @@ import Newsletter from '../../../Components/Client/Home/NewsLetter/NewsLetter'
 const Events = () => {
   return (
     <div>
-       <Helmet>
-                <title>Events</title>
-            </Helmet>
+      <Helmet>
+        <title>Events</title>
+      </Helmet>
+      <EventsHead />
       <Feautured />
       <AllEvents />
       <Newsletter />

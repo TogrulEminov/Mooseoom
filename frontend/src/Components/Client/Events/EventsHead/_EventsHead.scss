@@ -1,0 +1,335 @@
+.allEventsHead {
+    padding: 30px 0;
+
+    .row {
+        justify-content: center;
+
+        .eventHeadContent {
+            margin: 20px 0;
+            text-align: center;
+
+            h4 {
+                color: #666;
+                font-family: 'Roboto Mono', monospace;
+                font-size: 18px;
+            }
+
+            h1 {
+                font-family: 'Crimson Text', serif;
+                font-size: 50px;
+                color: #000;
+            }
+        }
+    }
+
+    .row {
+        justify-content: space-between;
+
+        .Side {
+            opacity: .8;
+            background: url("../../../../media/featured-event-1.jpg") center/cover;
+            min-height: 500px;
+            width: 100%;
+            display: flex;
+            align-items: flex-end;
+            margin: 10px 0;
+            .content {
+                width: 100%;
+                padding: 0 16px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+                .SideContent {
+                    width: 50%;
+                    h4 {
+                        font-size: 18px;
+                        font-family: 'Roboto Mono', monospace;
+                        color: #000;
+                        margin-bottom: 10px;
+                    }
+
+                    h1 {
+                        line-height: 60px;
+                        font-size: 40px;
+                        font-family: 'Crimson Text', serif; 
+                    }
+                }
+                .SideBtn{
+                    a{
+                        background-color: transparent;
+                        color: #000;
+                        text-align: left;
+                        padding: 15px 40px;
+                        cursor: pointer;
+                        border: 1px solid #000;
+                    }
+                }
+            }
+
+        }
+        .image-2{
+            opacity: .8;
+            background: url("../../../../media/featured-event-2.jpg");
+            min-height: 250px !important;
+            .content{
+                .SideContent {
+                    width: 50%;
+                    h4 {
+                        font-size: 14px;
+                        color: #fff;
+                    }
+
+                    h1 {
+                        font-size: 30px;
+                        color: #fff;
+                    }
+                }
+            }
+            .SideBtn{
+                a{
+                    background-color: transparent;
+                    color: #fff !important;
+                    text-align: left;
+                    padding: 15px 40px;
+                    cursor: pointer;
+                    border: 1px solid #fff !important;
+                }
+            }
+        }
+        .image-3{
+            opacity: .8;
+            background: url("../../../../media/featured-event-3.jpg");
+            min-height: 250px !important;
+            .content{
+                .SideContent {
+                    width: 50%;
+                    h4 {
+                        font-size: 14px;
+                        font-family: 'Roboto Mono', monospace;
+                        color: #fff;
+                        margin-bottom: 10px;
+                    }
+
+                    h1 {
+                        font-size: 30px;
+                        color: #fff;
+                    }
+                }
+            }
+            .SideBtn{
+                a{
+                    background-color: transparent;
+                    color: #fff !important;
+                    text-align: left;
+                    padding: 15px 40px;
+                    cursor: pointer;
+                    border: 1px solid #fff !important;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width:992px) {
+    .allEventsHead {
+        padding: 30px 0;
+        .row {
+            .eventHeadContent {
+    
+                h1 {
+                    font-size: 40px;
+                }
+            }
+        }
+    
+    .row {
+        justify-content: space-between;
+
+        .Side {
+            opacity: 1;
+            align-items: center;
+            .content {
+                width: 100%;
+                justify-content: center;
+                flex-direction: column;
+
+                .SideContent {
+                    width: 100%;
+                    text-align: center;
+                    h1 {
+                        line-height: 60px;
+                        font-size: 50px;
+                    }
+                }
+                .SideBtn{
+                    margin: 40px 0;
+                    a{
+                        text-align: center;
+                        padding: 15px 50px;
+                    }
+                }
+            }
+
+        }
+        .image-2{
+            opacity: 1;
+            .content{
+                .SideContent {
+                    width: 100%;
+                    h1 {
+                        font-size: 40px;
+                        color: #fff;
+                    }
+                }
+            }
+        }
+        .image-3{
+            opacity: 1;
+            .content{
+                .SideContent {
+                    width: 100%;
+
+                    h1 {
+                        font-size: 40px;
+                        color: #fff;
+                    }
+                }
+            }
+          
+        }
+    }
+}
+}
+@media only screen and (max-width:768px) {
+    .allEventsHead {
+        .row {
+            .eventHeadContent {
+                h1 {
+                    font-size: 35px;
+                }
+            }
+        }
+    
+    .row {
+        .Side {
+            opacity: 1;
+            align-items: center;
+            .content {
+                width: 100%;
+                justify-content: center;
+                flex-direction: column;
+
+                .SideContent {
+                    width: 100%;
+                    text-align: center;
+                    h1 {
+                        line-height: 60px;
+                        font-size: 40px;
+                    }
+                }
+                .SideBtn{
+                    margin: 40px 0;
+                    a{
+                        text-align: center;
+                        padding: 15px 50px;
+                    }
+                }
+            }
+
+        }
+        .image-2{
+            opacity: 1;
+            .content{
+                .SideContent {
+                    width: 100%;
+                    h1 {
+                        font-size: 40px;
+                        color: #fff;
+                    }
+                }
+            }
+        }
+        .image-3{
+            opacity: 1;
+            .content{
+                .SideContent {
+                    width: 100%;
+
+                    h1 {
+                        font-size: 40px;
+                        color: #fff;
+                    }
+                }
+            }
+          
+        }
+    }
+}
+}
+@media only screen and (max-width:768px) {
+    .allEventsHead {
+        .row {
+            .eventHeadContent {
+                h1 {
+                    font-size: 30px;
+                }
+            }
+        }
+    
+    .row {
+        .Side {
+            opacity: 1;
+            align-items: center;
+            .content {
+                width: 100%;
+                justify-content: center;
+                flex-direction: column;
+
+                .SideContent {
+                    width: 100%;
+                    text-align: center;
+                    h1 {
+                        line-height: 60px;
+                        font-size: 30px;
+                    }
+                }
+                .SideBtn{
+                    margin: 40px 0;
+                    a{
+                        text-align: center;
+                        padding: 15px 50px;
+                    }
+                }
+            }
+
+        }
+        .image-2{
+            opacity: 1;
+            .content{
+                .SideContent {
+                    width: 100%;
+                    h1 {
+                        font-size: 30px;
+                        color: #fff;
+                    }
+                }
+            }
+        }
+        .image-3{
+            opacity: 1;
+            .content{
+                .SideContent {
+                    width: 100%;
+
+                    h1 {
+                        font-size: 30px;
+                        color: #fff;
+                    }
+                }
+            }
+          
+        }
+    }
+}
+}

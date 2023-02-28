@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import "./_ContactEnd.scss"
 import { GoLocation } from "react-icons/go"
 import { Link } from "react-router-dom"
@@ -11,8 +11,11 @@ import "swiper/css";
 import "swiper/css/navigation";
 // import required modules
 import { Navigation } from "swiper";
+import { mainContext } from '../../../../Context/Context'
 
 const ContactEnd = () => {
+    const { postMessage, handleMessage, message } = useContext(mainContext)
+
     return (
         <div className='allContactEnd'>
             <div className="container">
@@ -135,49 +138,81 @@ const ContactEnd = () => {
                     <div className="col-6 col-lg-6 col-md-6 col-s-12 col-xs-12">
                         <div className="contactEndRight">
                             <h1>Send us a Message</h1>
-                            <form action="">
+                            <form onSubmit={postMessage}>
                                 <div className="row">
                                     <div className="col-6 col-lg-6 col-md-6 col-s-12 col-xs-12">
                                         <div className="allInputs">
                                             <div className='inputOne'>
-                                                <input type="text" placeholder='Your name*' />
-                                                <p>Type</p>
+                                                <input type="text"
+                                                    name='name'
+                                                    value={message.name}
+                                                    onChange={handleMessage}
+                                                    placeholder='Your name*' />
+                                                {/* <p>Type</p> */}
                                             </div>
                                             <div className='inputOne'>
-                                                <input type="email" placeholder='Email*' />
-                                                <p>Type</p>
+                                                <input type="email"
+                                                    name='email'
+                                                    value={message.email}
+                                                    onChange={handleMessage}
+                                                    placeholder='Email*' />
+                                                {/* <p>Type</p> */}
                                             </div>
                                             <div className='inputOne'>
-                                                <input type="text" placeholder='Website' />
-                                                <p>Type</p>
+                                                <input type="text"
+                                                    name='website'
+                                                    value={message.website}
+                                                    onChange={handleMessage}
+                                                    placeholder='Website' />
+                                                {/* <p>Type</p> */}
                                             </div>
                                         </div>
                                     </div>
                                     <div className="col-6 col-lg-6 col-md-6 col-s-12 col-xs-12">
                                         <div className="allInputs">
                                             <div className='inputOne'>
-                                                <input type="text" placeholder='Affilation*' />
-                                                <p>Type</p>
+                                                <input type="text"
+                                                    name='affilation'
+                                                    value={message.affilation}
+                                                    onChange={handleMessage}
+                                                    placeholder='Affilation*' />
+                                                {/* <p>Type</p> */}
                                             </div>
                                             <div className='inputOne'>
-                                                <input type="tel" placeholder='Number*' />
-                                                <p>Type</p>
+                                                <input type="tel"
+                                                    name='tel'
+                                                    value={message.tel}
+                                                    onChange={handleMessage}
+                                                    placeholder='Number*' />
+                                                {/* <p>Type</p> */}
                                             </div>
                                             <div className='inputOne'>
-                                                <input type="text" placeholder='Inquiry Department**' />
-                                                <p>Type</p>
+                                                <input type="text"
+                                                    name='department'
+                                                    value={message.department}
+                                                    onChange={handleMessage}
+                                                    placeholder='Inquiry Department**' />
+                                                {/* <p>Type</p> */}
                                             </div>
                                         </div>
                                     </div>
                                     <div className="col-12 col-lg-12 col-md-12 col-s-12 col-xs-12">
                                         <div className="allInputs">
                                             <div className="inputOne">
-                                                <input type="text" placeholder='Topic*' />
-                                                <p>Type</p>
+                                                <input type="text"
+                                                    name='topic'
+                                                    value={message.topic}
+                                                    onChange={handleMessage}
+                                                    placeholder='Topic*' />
+                                                {/* <p>Type</p> */}
                                             </div>
                                             <div className="inputOne">
-                                                <textarea placeholder='Your Message'></textarea>
-                                                <p>Type</p>
+                                                <textarea
+                                                    name='message'
+                                                    value={message.message}
+                                                    onChange={handleMessage}
+                                                    placeholder='Your Message'></textarea>
+                                                {/* <p>Type</p> */}
                                             </div>
                                         </div>
                                     </div>

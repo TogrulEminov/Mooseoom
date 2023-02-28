@@ -4,6 +4,16 @@ import axios from "axios"
 export const mainContext = createContext(null)
 
 function Context({ children }) {
+  const messageState = {
+    name: '',
+    affilation: '',
+    email: "",
+    tel: "",
+    website: "",
+    department: "",
+    topic: "",
+    message: ""
+  }
   const initialState = {
     name: "",
     workers: "",
@@ -43,6 +53,7 @@ function Context({ children }) {
   const [blogForm, setBlogForm] = useState(initialBlogState)
   const [shopfile, setShopFile] = useState(null)
   const [blogfile, setBlogFile] = useState(null)
+  const [message, setMessage] = useState(messageState)
   // !filter blog Item
   const filterArtItems = (catItem) => {
     const uptadeItems = blog.filter((curElem) => {
@@ -68,7 +79,7 @@ function Context({ children }) {
     getData()
     getArtData()
     getBlogData()
-
+    getMessage()
   }, [])
 
 
@@ -221,6 +232,27 @@ function Context({ children }) {
     axios.delete(`http://localhost:5555/blog/${index}`);
     getBlogData();
   };
+
+  // get message data
+  const getMessage = async () => {
+    const response = await axios.get(`${url}/message`)
+    setMessage(response.data);
+  }
+  // handle message
+  const handleMessage = (e) => {
+    const { value, name } = e.target
+    setMessage({
+      ...message,
+      [name]: value
+    });
+  }
+  const postMessage = (e) => {
+    e.preventDefault()
+    if (!message.name || !message.email || !message.message) return;
+    axios.post("http://localhost:5555/message", message);
+    setMessage(messageState)
+    getMessage();
+  }
   // !handle add basket
   const handleClick = (item) => {
     if (cardItems.indexOf(item) !== -1) return
@@ -248,8 +280,6 @@ function Context({ children }) {
   const clickHamburger = () => {
     setOpen(!open)
   }
-
-
   // ! blog page pagination
   const [currentButton, setCurrentButton] = useState(1)
   const [currentPage, setCurrentPage] = useState(1)
@@ -318,11 +348,12 @@ function Context({ children }) {
     shopForm,
     setShopFile,
     handleShopChange,
-    postBlogData, 
+    postBlogData,
     handleBlogChange,
     setBlogFile,
     blogForm,
     setData,
+    message, handleMessage, postMessage
   }
   return (
     <mainContext.Provider value={Values}>

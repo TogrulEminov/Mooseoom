@@ -71,8 +71,9 @@
                 }
             }
         }
-
         .contuctRight {
+            form{
+                width: 100%;
             .contuctTextarea {
                 textarea {
                     outline: none;
@@ -145,6 +146,7 @@
             }
         }
     }
+    }
 }
 @media only screen and (max-width:768px) {
     .allContuctHome {
@@ -173,8 +175,10 @@
                 }
             }
             .contuctRight{
+                form{
                 margin-top: 20px;
             }
+        }
         }
     }
 }
