@@ -308,7 +308,7 @@ const NavbarBottom = () => {
                         <div className="sidebarLinks">
                             <ul>
                                 <li>
-                                    <div className='dropdownSide' onClick={clickBtn}>
+                                    <div className='dropdownSide'>
                                         <NavLink to="/">Home</NavLink>
                                     </div>
                                 </li>
@@ -328,29 +328,29 @@ const NavbarBottom = () => {
 
 
                                 <li>
-                                    <NavLink>exhibitions</NavLink>
+                                    <NavLink to="/exhibitions">exhibitions</NavLink>
                                 </li>
                                 <li>
-                                    <NavLink>events</NavLink>
+                                    <NavLink to="/events">events</NavLink>
                                 </li>
                                 <li>
-                                    <NavLink>collections</NavLink>
+                                    <NavLink to="/collections">collections</NavLink>
                                 </li>
                                 <li>
-                                    <NavLink>our gallery</NavLink>
+                                    <NavLink to="/galery">our gallery</NavLink>
                                 </li>
                                 <li>
-                                    <NavLink>blog</NavLink>
+                                    <NavLink to="/blog">blog</NavLink>
                                 </li>
                                 <li>
-                                    <NavLink>contuct us</NavLink>
+                                    <NavLink to="contuctUs">contuct us</NavLink>
                                 </li>
                                 <li>
                                     <div className="mobileSocial">
-                                        <a href=""><BsFacebook /></a>
-                                        <a href=""><BsInstagram /></a>
-                                        <a href=""><BsTwitter /></a>
-                                        <a href=""><BsDribbble /></a>
+                                        <NavLink href=""><BsFacebook /></NavLink>
+                                        <NavLink href=""><BsInstagram /></NavLink>
+                                        <NavLink href=""><BsTwitter /></NavLink>
+                                        <NavLink href=""><BsDribbble /></NavLink>
                                     </div>
 
                                 </li>

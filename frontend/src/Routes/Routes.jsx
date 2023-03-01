@@ -50,10 +50,7 @@ export const ROUTES = [
                 path: "galery/:id",
                 element: <GaleryDetails />
             },
-            {
-                path: "galery",
-                element: <OurGalerry />
-            },
+           
             {
                 path: "shop",
                 element: <Shop />

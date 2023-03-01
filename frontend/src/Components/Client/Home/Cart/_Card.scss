@@ -154,11 +154,11 @@
         tr {
           td {
             .quantity {
-              justify-content: end;
+              justify-content:flex-end;
             }
             a {
               display: flex;
-              justify-content: end;
+              justify-content: flex-end;
             }
           }
         }
@@ -189,7 +189,7 @@
         }
 
         .quantity {
-          justify-content: end;
+          justify-content: flex-end;
         }
 
       }
