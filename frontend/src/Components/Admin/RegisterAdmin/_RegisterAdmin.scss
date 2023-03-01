@@ -1,5 +1,6 @@
 .allRegister {
-    height: 100vh;
+    min-height: 600px;
+    padding: 40px 0;
     justify-content: center;
     display: flex;
     align-items: center;
@@ -16,7 +17,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            min-height: 550px;
+            height: 550px;
             form {
                 width:80%;
 
@@ -60,6 +61,28 @@
                         a {
                             color: darkblue;
                             margin-left: 10px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width:576px) {
+    .allRegister{
+        min-height: 400px;
+        .row {
+            .registerForm {
+                padding: 10px ;
+                min-height: 250px;
+                form {
+                    width:100%;
+                    .inputOne {
+                        margin: 15px 0;
+    
+                        button {
+                            padding: 6px 20px;
                         }
                     }
                 }

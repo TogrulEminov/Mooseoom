@@ -57,7 +57,7 @@ const handleLogout = () => {
                     <button onClick={handleLogout}>Logout</button>
                 </div> 
                  ) : (
-                    <div className="col-6 col-lg-6 col-md-6 col-s-6 col-xs-6">
+                    <div className="col-6 col-lg-6 col-md-10 col-s-10 col-xs-10">
                         <div className="loginForm">
                             <form  onSubmit={handleSubmit}>
                                 <h1>Login</h1>

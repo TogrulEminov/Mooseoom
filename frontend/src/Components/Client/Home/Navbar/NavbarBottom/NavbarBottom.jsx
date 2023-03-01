@@ -52,7 +52,7 @@ const NavbarBottom = () => {
                                 </div>
                             </li>
                             <li>
-                                <NavLink to="/museum" style={({ isActive }) =>
+                                <NavLink to="/cart" style={({ isActive }) =>
                                     isActive ? activeStyle : undefined
                                 }>museum</NavLink>
                                 <div className="submenu-2">
@@ -309,28 +309,20 @@ const NavbarBottom = () => {
                             <ul>
                                 <li>
                                     <div className='dropdownSide' onClick={clickBtn}>
-                                        <NavLink>Home</NavLink>
-                                        <FaAngleDown style={{ transform: faq ? "rotate(0)" : "rotate(180deg)" }} />
+                                        <NavLink to="/">Home</NavLink>
                                     </div>
                                 </li>
-                                <div className='submenuSide' style={{ display: faq ? "block" : "none" }}>
-                                    <ul>
-                                        <li><Link>Home1</Link></li>
-                                        <li><Link>Home2</Link></li>
-                                        <li><Link>Home3</Link></li>
-                                    </ul>
-                                </div>
                                 <li>
                                     <div className='dropdownSide' onClick={clickBtn}>
-                                        <NavLink>museum</NavLink>
+                                        <NavLink to="/shop">Museum</NavLink>
                                         <FaAngleDown style={{ transform: faq ? "rotate(0)" : "rotate(180deg)" }} />
                                     </div>
                                 </li>
                                 <div className='submenuSide' style={{ display: faq ? "block" : "none" }}>
                                     <ul>
-                                        <li><Link>Home1</Link></li>
-                                        <li><Link>Home2</Link></li>
-                                        <li><Link>Home3</Link></li>
+                                        <li><Link to="/shop">Shop</Link></li>
+                                        <li><Link to="/cart">Card</Link></li>
+                                        <li to="/cart"><Link>Checkout</Link></li>
                                     </ul>
                                 </div>
 

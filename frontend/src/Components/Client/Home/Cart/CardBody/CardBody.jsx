@@ -14,12 +14,14 @@ const CardBody = () => {
             {cardItems.length > 0 && (
                 <table>
                     <thead>
+                        <tr>
                         <th>Delete</th>
                         <th>Image</th>
                         <th>Products</th>
                         <th>Price</th>
                         <th>Quantity</th>
                         <th>Subtotal</th>
+                        </tr>
                     </thead>
                     {cardItems.map((product) => (
                         <tbody key={product._id}>

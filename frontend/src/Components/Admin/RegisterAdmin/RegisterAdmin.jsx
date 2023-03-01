@@ -38,7 +38,7 @@ const RegisterAdmin = () => {
         <div className='allRegister'>
             <div className="container">
                 <div className="row">
-                    <div className="col-6 col-lg-6 col-md-6 col-s-6 col-xs-6">
+                    <div className="col-6 col-lg-6 col-md-10 col-s-10 col-xs-10">
                         <div className="registerForm">
                             <form onSubmit={handleSubmit} >
                             <h1>Register</h1>

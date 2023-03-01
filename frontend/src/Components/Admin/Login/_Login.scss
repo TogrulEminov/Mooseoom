@@ -1,5 +1,6 @@
 .allLogin {
-    height: 100vh;
+    min-height: 600px;
+    padding: 40px 0;
     justify-content: center;
     display: flex;
     align-items: center;
@@ -80,6 +81,28 @@
                         a {
                             color: darkblue;
                             margin-left: 10px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@media only screen and (max-width:576px) {
+    .allLogin {
+        min-height: 400px;
+        .row {
+            .loginForm {
+                padding: 10px ;
+                height: 250px;
+                form {
+                    width:100%;
+    
+                    .inputOne {
+                        margin: 15px 0;
+    
+                        button {
+                            padding: 6px 20px;
                         }
                     }
                 }

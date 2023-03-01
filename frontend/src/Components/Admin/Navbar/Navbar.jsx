@@ -87,7 +87,7 @@ const Navbar = () => {
                                     <li>
                                         <NavLink style={({ isActive }) =>
                                             isActive ? activeStyle : undefined
-                                        } to="/admin/">Shop</NavLink>
+                                        } to="/admin/shop">Shop</NavLink>
                                     </li>
                                 ) : (
                                     <li></li>

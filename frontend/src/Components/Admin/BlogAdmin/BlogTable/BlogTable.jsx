@@ -3,7 +3,7 @@ import { mainContext } from '../../../../Context/Context'
 import { AiFillEdit, AiOutlineDelete } from "react-icons/ai"
 import "./_BlogTable.scss"
 const BlogTable = () => {
-    const { blog, search, searchData, delBlogData,handleEditBlogClick } = useContext(mainContext)
+    const { blog, search, searchData, delBlogData, handleEditBlogClick } = useContext(mainContext)
     return (
         <div className='blogTable'>
             <div className="container">
@@ -18,16 +18,18 @@ const BlogTable = () => {
                 </div>
                 <table>
                     <thead>
-                        <th>Title</th>
-                        <th>Information</th>
-                        <th>Date</th>
-                        <th>Publisher</th>
-                        <th>Publisher Image</th>
-                        <th>Blog Image</th>
-                        <th>Archives</th>
-                        <th>Catagory</th>
-                        <th>Uptade</th>
-                        <th>Delete</th>
+                        <tr>
+                            <th>Title</th>
+                            <th>Information</th>
+                            <th>Date</th>
+                            <th>Publisher</th>
+                            <th>Publisher Image</th>
+                            <th>Blog Image</th>
+                            <th>Archives</th>
+                            <th>Catagory</th>
+                            <th>Uptade</th>
+                            <th>Delete</th>
+                        </tr>
                     </thead>
                     <tbody>
                         {blog && blog
@@ -44,14 +46,14 @@ const BlogTable = () => {
                                     <td data-aria-label='Publisher'>{e.publisher}</td>
                                     <td data-aria-label='Publisher Image'>
                                         <img src={e.publisherUrl} alt="" />
-                                        </td>
+                                    </td>
                                     <td data-aria-label='Blog Image'>
                                         <img src={e.blogImage} alt="" />
                                     </td>
                                     <td data-aria-label='Archives'>{e.archives}</td>
                                     <td data-aria-label='Catagory'>{e.catagories}</td>
                                     <td data-aria-label='Uptade'>
-                                    <div><AiFillEdit onClick={() => handleEditBlogClick(e)}/></div>
+                                        <div><AiFillEdit onClick={() => handleEditBlogClick(e)} /></div>
 
                                     </td>
                                     <td data-aria-label='Delete'>
