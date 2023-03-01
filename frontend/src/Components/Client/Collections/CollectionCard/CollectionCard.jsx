@@ -32,7 +32,7 @@ const CollectionCard = () => {
                             <motion.div key={e} animate={{opacity:1, scale:1}} initial={{opacity:1, scale:0}} exit={{opacity:0,scale:0}}  layout className="col-4  col-lg-4 col-md-6 col-s-12 col-xs-12 collectionAll" >
                             <AnimatePresence>
                                 <img src={blog.blogImage} alt="" />
-                                <h3><Link to="">{blog.title}</Link></h3>
+                                <h3><Link to={`/blog/${blog._id}`}>{blog.title}</Link></h3>
                                 </AnimatePresence>
                             </motion.div>
                         ))}

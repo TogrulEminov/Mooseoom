@@ -9,17 +9,17 @@ const BlogComment = () => {
             <form action="">
                 <div className="content">
                     <textarea name="" id="" placeholder='Your comment'></textarea>
-                    <p>mcxkxl</p>
+                    <p></p>
                 </div>
                 <div className="content">
                     <div className="row">
                         <div className="inputOne col-6">
                             <input type="text" placeholder='Your name' />
-                            <p>d</p>
+                            <p></p>
                         </div>
                         <div className="inputOne col-6">
                             <input type="email" placeholder='Your email' />
-                            <p>ds</p>
+                            <p></p>
                         </div>
                         <div className="content">
                             <button>Submit now</button>
