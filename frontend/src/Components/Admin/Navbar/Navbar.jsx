@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { NavLink } from "react-router-dom"
 import Logo from '../../Client/Logo/Logo'
 import { RxHamburgerMenu } from "react-icons/rx"
@@ -9,7 +9,23 @@ const Navbar = () => {
     let activeStyle = {
         color: "red"
     };
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
 
+    const getCookie = (name) => {
+        const value = `; ${document.cookie}`;
+        const parts = value.split(`; ${name}=`);
+        if (parts.length === 2) {
+            return parts.pop().split(';').shift();
+        }
+    };
+
+    useEffect(() => {
+
+        const token = getCookie('token');
+        if (token) {
+            setIsLoggedIn(true);
+        }
+    }, []);
     const { clickHamburger, open } = useContext(mainContext)
     return (
         <div className='navbarAdmin'>
@@ -25,21 +41,33 @@ const Navbar = () => {
                     </div>
                     <div className="navbarLinks">
                         <ul>
-                            <li>
-                                <NavLink to="/admin/" style={({ isActive }) =>
-                                    isActive ? activeStyle : undefined
-                                }>Shop</NavLink>
-                            </li>
-                            <li>
-                                <NavLink to='/admin/art' style={({ isActive }) =>
-                                    isActive ? activeStyle : undefined
-                                }>Art</NavLink>
-                            </li>
-                            <li>
-                                <NavLink to="/admin/blog" style={({ isActive }) =>
-                                    isActive ? activeStyle : undefined
-                                }>Blog</NavLink>
-                            </li>
+                            {isLoggedIn ? (
+                                <li>
+                                    <NavLink to="/admin/shop" style={({ isActive }) =>
+                                        isActive ? activeStyle : undefined
+                                    }>Shop</NavLink>
+                                </li>
+                            ) : (
+                                <li></li>
+                            )}
+                            {isLoggedIn ? (
+                                <li>
+                                    <NavLink to='/admin/art' style={({ isActive }) =>
+                                        isActive ? activeStyle : undefined
+                                    }>Art</NavLink>
+                                </li>
+                            ) : (
+                                <li></li>
+                            )}
+                            {isLoggedIn ? (
+                                <li>
+                                    <NavLink to="/admin/blog" style={({ isActive }) =>
+                                        isActive ? activeStyle : undefined
+                                    }>Blog</NavLink>
+                                </li>
+                            ) : (
+                                <li></li>
+                            )}
                             <li>
                                 <NavLink to="/">Go to Home</NavLink>
                             </li>
@@ -55,21 +83,33 @@ const Navbar = () => {
                         </div>
                         <div className="sidebarLinks">
                             <ul>
-                                <li>
-                                    <NavLink style={({ isActive }) =>
-                                        isActive ? activeStyle : undefined
-                                    } to="/admin/">Shop</NavLink>
-                                </li>
-                                <li>
-                                    <NavLink style={({ isActive }) =>
-                                        isActive ? activeStyle : undefined
-                                    } to='/admin/art'>Art</NavLink>
-                                </li>
-                                <li>
-                                    <NavLink style={({ isActive }) =>
-                                        isActive ? activeStyle : undefined
-                                    } to="/admin/blog">Blog</NavLink>
-                                </li>
+                                {isLoggedIn ? (
+                                    <li>
+                                        <NavLink style={({ isActive }) =>
+                                            isActive ? activeStyle : undefined
+                                        } to="/admin/">Shop</NavLink>
+                                    </li>
+                                ) : (
+                                    <li></li>
+                                )}
+                                {isLoggedIn ? (
+                                    <li>
+                                        <NavLink style={({ isActive }) =>
+                                            isActive ? activeStyle : undefined
+                                        } to='/admin/art'>Art</NavLink>
+                                    </li>
+                                ) : (
+                                    <li></li>
+                                )}
+                                {isLoggedIn ? (
+                                    <li>
+                                        <NavLink style={({ isActive }) =>
+                                            isActive ? activeStyle : undefined
+                                        } to="/admin/blog">Blog</NavLink>
+                                    </li>
+                                ) : (
+                                    <li></li>
+                                )}
                                 <li>
                                     <NavLink to="/">Go to Home</NavLink>
                                 </li>

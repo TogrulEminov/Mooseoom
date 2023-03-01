@@ -6,11 +6,9 @@ var morgan = require('morgan')
 const postRoute = require("./Routes/posters")
 const blogRoute = require("./Routes/Blog");
 const authRouter=require('./Routes/Auth')
-
 const artRoute = require("./Routes/Art");
 const messageRoute = require("./Routes/Message");
 const dotenv = require("dotenv");
-
 const app = express();
 app.use(cors());
 app.use(morgan("dev"))

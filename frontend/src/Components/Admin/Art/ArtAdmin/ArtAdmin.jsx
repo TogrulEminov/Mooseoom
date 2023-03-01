@@ -4,7 +4,7 @@ import { Link } from "react-router-dom"
 import { mainContext } from '../../../../Context/Context';
 
 const ArtAdmin = () => {
-    const { state, handleChange, postArtData, setFile } = useContext(mainContext)
+    const { state, handleChange, postArtData, setFile,updateArtData,id } = useContext(mainContext)
     return (
         <div className='artAdmin'>
             <div className="container">
@@ -53,6 +53,8 @@ const ArtAdmin = () => {
                                     </div>
                                     <div className="inputOne">
                                         <button>Add to Api</button>
+                                        <button style={{background:"green",marginLeft:20}} onClick={() => updateArtData(id)}>UPDATE</button>
+
                                     </div>
                                 </div>
                             </form>

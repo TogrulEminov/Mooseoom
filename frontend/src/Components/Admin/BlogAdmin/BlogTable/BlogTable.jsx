@@ -3,7 +3,7 @@ import { mainContext } from '../../../../Context/Context'
 import { AiFillEdit, AiOutlineDelete } from "react-icons/ai"
 import "./_BlogTable.scss"
 const BlogTable = () => {
-    const { blog, search, searchData, delBlogData } = useContext(mainContext)
+    const { blog, search, searchData, delBlogData,handleEditBlogClick } = useContext(mainContext)
     return (
         <div className='blogTable'>
             <div className="container">
@@ -51,7 +51,8 @@ const BlogTable = () => {
                                     <td data-aria-label='Archives'>{e.archives}</td>
                                     <td data-aria-label='Catagory'>{e.catagories}</td>
                                     <td data-aria-label='Uptade'>
-                                        <div><AiFillEdit /></div>
+                                    <div><AiFillEdit onClick={() => handleEditBlogClick(e)}/></div>
+
                                     </td>
                                     <td data-aria-label='Delete'>
                                         <p><AiOutlineDelete onClick={() => delBlogData(e._id)} /></p>

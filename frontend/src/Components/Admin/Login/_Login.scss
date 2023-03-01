@@ -8,6 +8,25 @@
     .row {
         justify-content: center;
 
+        .logOut {
+            padding: 40px 0;
+
+            p {
+                font-family: 'Crimson Text', serif;
+                color: green;
+                font-size: 40px;
+            }
+            button{
+                margin: 10px 0;
+                color: #fff;
+                background-color: #000;
+                outline: none;
+                border: none;
+                padding: 10px 40px;
+                cursor: pointer;
+            }
+        }
+
         .loginForm {
             display: flex;
             justify-content: center;
@@ -17,13 +36,16 @@
             border: 1px solid #ddd;
             padding: 40px 50px;
             box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
             form {
                 width: 80%;
+
                 h1 {
                     font-size: 40px;
                     font-family: 'Crimson Text', serif;
                     color: #000;
                 }
+
                 .inputOne {
                     margin: 20px 0;
 
@@ -40,19 +62,22 @@
                         border-radius: 8px;
                         margin: 15px 0;
                         font-size: 18px;
-                        font-family: 'Amiri', serif;    
+                        font-family: 'Amiri', serif;
                         padding: 8px 40px;
                         color: #fff;
                         background-color: #000;
                         transition: .5s;
-                        &:hover{
+
+                        &:hover {
                             color: #666;
                         }
                     }
-                    span{
+
+                    span {
                         line-height: 30px;
                         font-size: 18px;
-                        a{
+
+                        a {
                             color: darkblue;
                             margin-left: 10px;
                         }

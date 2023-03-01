@@ -4,7 +4,7 @@ import "./_ArtAdminTable.scss"
 import { AiFillEdit, AiOutlineDelete } from "react-icons/ai"
 import "./_ArtAdminTable.scss"
 const ArtAdminTable = () => {
-    const { artData,search,searchData,delData } = useContext(mainContext)
+    const { artData,search,searchData,delData,handleEditArtClick } = useContext(mainContext)
     return (
         <div className='artAdminTable'>
             <div className="container">
@@ -44,7 +44,8 @@ const ArtAdminTable = () => {
                                     <img src={e.artPath} alt="" />
                                 </td>
                                 <td data-aria-label='Uptade'>
-                                    <div><AiFillEdit /></div>
+                                <div><AiFillEdit onClick={() => handleEditArtClick(e)}/></div>
+
                                 </td>
                                 <td data-aria-label='Delete'>
                                     <p><AiOutlineDelete  onClick={()=>delData(e._id)} /></p>

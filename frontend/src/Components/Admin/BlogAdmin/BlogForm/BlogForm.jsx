@@ -3,7 +3,7 @@ import "./_BlogForm.scss"
 import { Link } from "react-router-dom"
 import { mainContext } from '../../../../Context/Context';
 const BlogForm = () => {
-    const { postBlogData,handleBlogChange, setBlogFile,blogForm } = useContext(mainContext)
+    const { postBlogData,handleBlogChange, setBlogFile,blogForm, updateBlogData,id } = useContext(mainContext)
     return (
         <div className='blogAdmin'>
             <div className="container">
@@ -80,6 +80,7 @@ const BlogForm = () => {
                                     </div>
                                     <div className="inputOne">
                                         <button>Add to Api</button>
+                                        <button style={{background:"green",marginLeft:20}} onClick={() => updateBlogData(id)}>UPDATE</button>
                                     </div>
                                 </div>
                             </form>

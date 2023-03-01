@@ -111,11 +111,11 @@ export const ROUTES = [
                 element: <Register />
             },
             {
-                path: "login",
+                path: "",
                 element: <LoginAdmin />
             },
             {
-                path: "",
+                path: "shop",
                 element: <ShopAdmin />
             },
             {

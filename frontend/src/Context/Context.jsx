@@ -54,6 +54,8 @@ function Context({ children }) {
   const [shopfile, setShopFile] = useState(null)
   const [blogfile, setBlogFile] = useState(null)
   const [message, setMessage] = useState(messageState)
+  const [id, setId] = useState();
+
   // !filter blog Item
   const filterArtItems = (catItem) => {
     const uptadeItems = blog.filter((curElem) => {
@@ -135,6 +137,26 @@ function Context({ children }) {
     getData();
     setShopForm(initialShopState)
   };
+  const handleEditClick = (data) => {
+    setShopForm({
+      name: data.name,
+      rate: data.rate,
+      description: data.description,
+      price: data.price,
+      percantagePrice: data.percantagePrice,
+      sale: data.sale,
+      catagory: data.catagory,
+    });
+    setId(data._id);
+
+  };
+
+  const updateData = async (dataId) => {
+    await axios.put(`http://localhost:5555/posters/${dataId}`, shopForm);
+    getData();
+    setShopForm(initialShopState)
+
+  };
   // !del shop data
   const delShopData = (index) => {
     axios.delete(`http://localhost:5555/posters/${index}`);
@@ -179,6 +201,23 @@ function Context({ children }) {
         console.log(response);
       });
     getArtData();
+  };
+  const handleEditArtClick = (data) => {
+    setState({
+      name: data.name,
+      workers: data.workers,
+      information: data.information,
+      title: data.title,
+    });
+    setId(data._id);
+
+  };
+
+  const updateArtData = async (dataId) => {
+    await axios.put(`http://localhost:5555/art/${dataId}`, state);
+    getArtData();
+    setState(initialState)
+
   };
   // !del art data
   const delData = (index) => {
@@ -227,18 +266,38 @@ function Context({ children }) {
     getBlogData();
     setBlogForm(initialBlogState)
   };
+  const handleEditBlogClick = (data) => {
+    setBlogForm({
+      title: data.title,
+      date: data.date,
+      information: data.information,
+      publisher: data.publisher,
+      publisherUrl: data.publisherUrl,
+      archives: data.archives,
+      catagories: data.catagories,
+    });
+    setId(data._id);
+
+  };
+
+  const updateBlogData = async (dataId) => {
+    await axios.put(`http://localhost:5555/blog/${dataId}`, state);
+    getBlogData();
+    setBlogForm(initialBlogState)
+
+  };
   // !del Blog data
   const delBlogData = (index) => {
     axios.delete(`http://localhost:5555/blog/${index}`);
     getBlogData();
   };
 
-  // get message data
+  // !get message data
   const getMessage = async () => {
     const response = await axios.get(`${url}/message`)
     setMessage(response.data);
   }
-  // handle message
+  // !handle message
   const handleMessage = (e) => {
     const { value, name } = e.target
     setMessage({
@@ -353,7 +412,16 @@ function Context({ children }) {
     setBlogFile,
     blogForm,
     setData,
-    message, handleMessage, postMessage
+    message,
+    handleMessage,
+    postMessage,
+    handleEditClick,
+    handleEditArtClick,
+    handleEditBlogClick,
+    id,
+    updateData,
+    updateArtData,
+    updateBlogData
   }
   return (
     <mainContext.Provider value={Values}>

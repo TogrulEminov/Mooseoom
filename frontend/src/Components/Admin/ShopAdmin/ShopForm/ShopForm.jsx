@@ -3,7 +3,7 @@ import "./_ShopForm.scss"
 import { Link } from "react-router-dom"
 import { mainContext } from '../../../../Context/Context';
 const ShopForm = () => {
-    const { setShopFile, postShopData, shopForm, handleShopChange } = useContext(mainContext)
+    const { setShopFile, postShopData, shopForm, handleShopChange,updateData,id } = useContext(mainContext)
     return (
         <div className='shopAdmin'>
             <div className="container">
@@ -83,6 +83,7 @@ const ShopForm = () => {
                                     </div>
                                     <div className="inputOne">
                                         <button>Add to Api</button>
+                                        <button style={{background:"green",marginLeft:20}} onClick={() => updateData(id)}>UPDATE</button>
                                     </div>
                                 </div>
                             </form>

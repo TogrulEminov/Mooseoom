@@ -36,7 +36,7 @@ router.post("/", (req, res) => {
                 title: req.body.title,
                 workers: req.body.workers,
                 artPath: result.secure_url,
-    
+                user:req.userId
             })
             newArt.save()
             const savedPost = newArt
