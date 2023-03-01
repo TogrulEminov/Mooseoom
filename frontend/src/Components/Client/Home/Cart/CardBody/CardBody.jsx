@@ -5,7 +5,7 @@ import { Link } from "react-router-dom"
 import { MdContentPaste } from "react-icons/md"
 import { mainContext } from '../../../../../Context/Context'
 const CardBody = () => {
-    const { cardItems, emptyBasket } = useContext(mainContext)
+    const { cardItems, emptyBasket,price,decreaseQuantity,increaseQuantity,quantities } = useContext(mainContext)
 
     return (
 
@@ -22,8 +22,8 @@ const CardBody = () => {
                         <th>Subtotal</th>
                     </thead>
                     {cardItems.map((product) => (
-                        <tbody>
-                            <tr key={product._id}>
+                        <tbody key={product._id}>
+                            <tr >
                                 <td data-aria-label='Delete'>
                                     <button  onClick={() => emptyBasket()}><AiOutlineDelete /></button>
                                 </td>
@@ -46,16 +46,16 @@ const CardBody = () => {
                                 <td data-aria-label='Quantity'>
                                     <div className="quantity">
                                     <button className='plus'>
-                                        <AiOutlinePlus />
+                                        <AiOutlinePlus onClick={()=>increaseQuantity(product._id)} />
                                     </button>
-                                    <span>0</span>
+                                    <span>{quantities[product._id] || 1}</span>
                                     <button className='minus'>
-                                        <AiOutlineMinus />
+                                        <AiOutlineMinus onClick={()=>decreaseQuantity(product._id)} />
                                     </button>
                                     </div>
                                 </td>
                                 <td data-aria-label='Subtotal'>
-                                    <h5>Subtotal</h5>
+                                    <h5> ${parseFloat(product.price) * (quantities[product._id] || 1)}</h5>
                                 </td>
                             </tr>
                         </tbody>

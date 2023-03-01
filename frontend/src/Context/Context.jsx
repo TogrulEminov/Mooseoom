@@ -55,6 +55,7 @@ function Context({ children }) {
   const [blogfile, setBlogFile] = useState(null)
   const [message, setMessage] = useState(messageState)
   const [id, setId] = useState();
+  const [quantities, setQuantities] = useState({});
 
   // !filter blog Item
   const filterArtItems = (catItem) => {
@@ -371,6 +372,18 @@ function Context({ children }) {
     });
   }, [shopButton, setCurrentShopPage])
 
+  const increaseQuantity = (id) => {
+    const updatedQuantities = { ...quantities, [id]: (quantities[id] || 0) + 1 };
+    setQuantities(updatedQuantities);
+    localStorage.setItem('quantities', JSON.stringify(updatedQuantities));
+  };
+
+  const decreaseQuantity = (id) => {
+    const updatedQuantities = { ...quantities, [id]: (quantities[id] || 1) - 1 };
+    setQuantities(updatedQuantities);
+    localStorage.setItem('quantities', JSON.stringify(updatedQuantities));
+  };
+  const price = data?.reduce((sum, products) => sum + parseFloat(products.price) * (quantities[products._id] || 1), 0)
 
   const Values = {
     clickHamburger,
@@ -421,7 +434,7 @@ function Context({ children }) {
     id,
     updateData,
     updateArtData,
-    updateBlogData
+    updateBlogData,price,decreaseQuantity,increaseQuantity,quantities
   }
   return (
     <mainContext.Provider value={Values}>

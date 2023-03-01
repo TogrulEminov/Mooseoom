@@ -19,7 +19,7 @@ const ShopHeadDetails = ({data}) => {
         "outlined",
         "outlined",
     ]
-    const { handleClick } = useContext(mainContext)
+    const { handleClick,decreaseQuantity,increaseQuantity,quantities } = useContext(mainContext)
     const [star, setStar] = useState([]);
 
    
@@ -73,11 +73,11 @@ const ShopHeadDetails = ({data}) => {
                             <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
                             <div className='countProduct'>
                                 <button className='plusMinus'>
-                                    <AiOutlinePlus />
+                                    <AiOutlinePlus  onClick={()=>increaseQuantity(data._id)} />
                                 </button>
-                                <span>0</span>
+                                <span>{quantities[data._id] || 1}</span>
                                 <button className='plusMinus'>
-                                    <AiOutlineMinus />
+                                    <AiOutlineMinus onClick={()=>decreaseQuantity(data._id)} />
                                 </button>
                                 <button onClick={() => handleClick(data)} className='addBtn'>Add to Cart</button>
                             </div>
