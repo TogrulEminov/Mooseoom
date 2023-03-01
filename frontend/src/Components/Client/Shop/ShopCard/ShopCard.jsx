@@ -5,7 +5,7 @@ import { mainContext } from '../../../../Context/Context'
 
 
 
-const ShopCard = ({ e }) => {
+const ShopCard = ({ e}) => {
     const filledStar = [
         "filled",
         "filled",

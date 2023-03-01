@@ -4,10 +4,11 @@ import ShopContent from "../../../Components/Client/Shop/ShopContent"
 const Shop = () => {
     return (
         <div>
-             <Helmet>
+            <Helmet>
                 <title>Shop</title>
             </Helmet>
-            <ShopContent/>
+            <ShopContent />
+            
         </div>
     )
 }

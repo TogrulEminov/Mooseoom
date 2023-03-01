@@ -1,10 +1,40 @@
-import React, { useContext, useEffect } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { mainContext } from '../../../Context/Context'
 import "./_Shop.scss"
 import Pagination from './Pagination/Pagination'
 import ShopCard from './ShopCard/ShopCard'
+import ShopFilter from './ShopFilter/ShopFilter'
 const ShopContent = () => {
     const { currentShop } = useContext(mainContext)
+
+    const [sort, setSort] = useState({
+        sort: "",
+        products: currentShop
+    })
+    const sorting = (e) => {
+        console.log(e.target.value);
+        const sorting = e.target.value
+        const sortRes = currentShop.sort((a, b) => {
+            if (sorting === "all") {
+                return a.id > b.id ?1:-1
+            }
+            if (sorting === "low") {
+                return (a.price - parseInt((a.price * a.percantagePrice) / 100)) -(b.price - parseInt((b.price * b.percantagePrice) / 100))
+              
+            }
+            if (sorting === "rate") {
+                return b.rate -a.rate
+            }
+            if (sorting === "high") {
+                return (b.price - parseInt((b.price * b.percantagePrice) / 100)) -(a.price - parseInt((a.price * a.percantagePrice) / 100))
+
+            }
+        })
+        setSort({
+            sort: sorting,
+            products: sortRes
+        })
+    }
     useEffect(() => {
         window.scrollTo({
             top: 0,
@@ -22,6 +52,8 @@ const ShopContent = () => {
                 </div>
             </div>
             <div className="container">
+                <ShopFilter sorting={sorting} sort={sort} />
+
                 <div className="row">
                     {
                         currentShop && currentShop.map((e, index) => (

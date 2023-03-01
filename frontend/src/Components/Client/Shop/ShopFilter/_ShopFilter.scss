@@ -1,0 +1,27 @@
+.shopFilter {
+    padding: 20px 0;
+
+    .row {
+        justify-content: space-between;
+
+        .content {
+            p {
+                font-size: 20px;
+                font-family: 'Roboto Mono', monospace;
+                span{
+                    color: gray;
+                    padding: 10px;
+                }
+            }
+        }
+        .selectFilter{
+            display: flex;
+            justify-content: end;
+            select{
+                padding: 15px;
+                outline: none;
+                border: 1px solid #ddd;
+            }
+        }
+    }
+}

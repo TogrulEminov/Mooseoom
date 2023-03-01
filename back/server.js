@@ -8,6 +8,7 @@ const blogRoute = require("./Routes/Blog");
 const authRouter=require('./Routes/Auth')
 const artRoute = require("./Routes/Art");
 const messageRoute = require("./Routes/Message");
+const CommonRoute=require("./Routes/CommonRoute")
 const dotenv = require("dotenv");
 const app = express();
 app.use(cors());
@@ -34,6 +35,7 @@ app.use('/message', messageRoute)
 // ! user
 app.use("/auth",authRouter)
 
+app.use("/common",CommonRoute)
 
 //Routes
 app.get("/", (req, res) => {
