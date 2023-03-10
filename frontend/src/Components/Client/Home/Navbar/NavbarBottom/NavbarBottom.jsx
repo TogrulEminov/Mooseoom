@@ -282,7 +282,7 @@ const NavbarBottom = () => {
                                 }>blog</NavLink>
                             </li>
                             <li>
-                                <NavLink to="/contuctUs" style={({ isActive }) =>
+                                <NavLink to="/contact-us" style={({ isActive }) =>
                                     isActive ? activeStyle : undefined
                                 }>contact us</NavLink>
                             </li>

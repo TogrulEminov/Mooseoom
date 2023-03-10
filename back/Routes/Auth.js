@@ -6,7 +6,7 @@ const bcrypt = require("bcryptjs")
 const jwt = require("jsonwebtoken")
 
 const registerSchema = Joi.object({
-    name: Joi.string().required().min(3).max(255),
+    username: Joi.string().required().min(3).max(255),
     email: Joi.string().required().email().min(3).max(255),
     password: Joi.string().required().min(3).max(255)
 });

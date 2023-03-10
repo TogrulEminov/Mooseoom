@@ -43,7 +43,7 @@ const RegisterAdmin = () => {
                             <form onSubmit={handleSubmit} >
                             <h1>Register</h1>
                                 <div className="inputOne">
-                                    <input type="text" name='name' placeholder='Enter your name' value={username} onChange={(e) => setUsername(e.target.value)} />
+                                    <input type="text" name='username' placeholder='Enter your name' value={username} onChange={(e) => setUsername(e.target.value)} />
                                 </div>
                                 <div className="inputOne">
                                     <input type="email" name='email' placeholder='Enter your email' value={email} onChange={(e) => setEmail(e.target.value)} />

@@ -76,7 +76,7 @@ export const ROUTES = [
                 element: <Collections />
             },
             {
-                path: "contuctUs",
+                path: "contact-us",
                 element: <ContactUs />
             },
             {
